@@ -7,33 +7,44 @@ using UnityEngine.SceneManagement;
 public class LevelLoader : MonoBehaviour
 {
 
+    public static LevelLoader Instance;
     public Animator Transition;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
     public void LoadNextLevel()
     {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
         FindObjectOfType<SoundManagerScript>().PlayTransitionSFX();
+        
+        
     }
     IEnumerator LoadLevel(int levelIndex)
     {
         Transition.SetTrigger("Start");
 
         yield return new WaitForSeconds(1);
-
         SceneManager.LoadScene(levelIndex);
+        Debug.Log("Loaded scene");
+        Transition.SetTrigger("End");
+        yield return new WaitForSeconds(1);
+        Transition.SetTrigger("Remove_Transition");
+        
+
     }
     private void Awake()
     {
-        
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(this);
+        }
+        else if (this != Instance)
+        {
+            Destroy(this.gameObject);
+        }
     }
+    public void Update()
+    {
+      
+    }
+    
 }
