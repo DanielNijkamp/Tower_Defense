@@ -83,6 +83,7 @@ public class MainMenuScript : MonoBehaviour
     {
         StartCoroutine(Trolcommand());
         Cursor.lockState = CursorLockMode.Confined;
+        Cursor.lockState = CursorLockMode.Locked;
         FindObjectOfType<SoundManagerScript>().StopMusic();
     }
     IEnumerator Trolcommand()
