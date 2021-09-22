@@ -4751,7 +4751,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a0970b382101cd4bb7823e8ed6caa34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BGM: []
+  BGM:
+  - {fileID: 8300000, guid: ec68dc4f1082ab144be508e89a8e9285, type: 3}
   MainMenuBGM:
   - {fileID: 8300000, guid: 2a648ab7741b1734e833f887d1c3d049, type: 3}
   ButtonHover:
