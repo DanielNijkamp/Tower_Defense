@@ -24,7 +24,6 @@ public class LevelLoader : MonoBehaviour
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene(levelIndex);
         StartCoroutine(FindObjectOfType<SoundManagerScript>().StartBGMMusic());
-        Debug.Log("Loaded scene");
         Transition.SetTrigger("End");
         yield return new WaitForSeconds(1);
         Transition.SetTrigger("Remove_Transition");

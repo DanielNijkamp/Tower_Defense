@@ -99,8 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsBuildable: 0
-  prefab: {fileID: 2369602786249704139, guid: 67294eb8426ccb14f950198731e49f99, type: 3}
-  GameCanvas: {fileID: 0}
+  prefab: {fileID: 0}
 --- !u!114 &-6943987139126806283
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,8 +7,7 @@ public class TileScript : MonoBehaviour
 {
     public bool IsBuildable;
 
-    public GameObject prefab;
-    GameObject instance;
+
     public void Test()
     {
         print("test");
