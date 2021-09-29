@@ -19,13 +19,13 @@ public class MapGen : MonoBehaviour
     //0 = base |  2 = path | 3 = buildable | 4 = start | 5 = end tile
     
     int[,] TileMap = {
-        {0,0,0,0,0,0,0,0,0,0,3,0,0,0,0,0},
+        {0,0,0,0,0,0,0,0,0,3,3,0,0,0,0,0},
         {0,0,0,0,3,0,0,0,0,2,2,2,2,0,0,0},
         {0,0,3,2,2,2,0,0,3,2,0,0,2,3,0,0},
-        {0,0,0,2,0,2,0,3,0,2,0,3,2,2,2,4},
+        {0,0,3,2,0,2,0,3,0,2,0,3,2,2,2,4},
         {0,0,0,2,0,2,2,2,0,2,0,0,0,3,0,0},
-        {0,0,3,2,0,0,3,2,0,2,3,0,0,0,0,0},
-        {5,2,2,2,3,0,0,2,3,2,0,0,0,0,0,0},
+        {0,0,3,2,3,0,3,2,0,2,3,0,0,0,0,0},
+        {5,2,2,2,3,0,0,2,3,2,3,0,0,0,0,0},
         {0,0,3,0,0,0,0,2,2,2,0,0,0,0,0,0}
     };
     private void Start()
@@ -56,6 +56,7 @@ public class MapGen : MonoBehaviour
                     GameObject newTile = Instantiate(BuildableTile);
                     newTile.transform.position = new Vector2(y - yOffset, x - xOffset);
                     newTile.transform.parent = MapGenObject.transform;
+                    
                     
                 }
                 else if (TileMap[x, y] == 4)

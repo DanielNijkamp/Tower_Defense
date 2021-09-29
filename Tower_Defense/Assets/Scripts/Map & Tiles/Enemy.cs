@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
     
     private void Start()
     {
-        HealthText.text = FindObjectOfType<GameManager>().PlayerHealth + " ";
+        HealthText.text = FindObjectOfType<GameUI>().PlayerHealth + " ";
         SetupPath();
     }
     private void FixedUpdate()
@@ -51,12 +51,12 @@ public class Enemy : MonoBehaviour
     }
     void PathComplete(int value)
     {
-        int newHealth = FindObjectOfType<GameManager>().PlayerHealth -= value;
+        int newHealth = FindObjectOfType<GameUI>().PlayerHealth -= value;
         HealthText.text =  newHealth + " ";
         Destroy(gameObject);
-        if (FindObjectOfType<GameManager>().PlayerHealth == 0)
+        if (FindObjectOfType<GameUI>().PlayerHealth == 0)
         {
-            FindObjectOfType<GameManager>().Endgame();
+            FindObjectOfType<GameUI>().Endgame();
         }
     }
 }

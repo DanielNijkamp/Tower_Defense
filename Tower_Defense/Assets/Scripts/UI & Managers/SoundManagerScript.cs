@@ -8,6 +8,7 @@ public class SoundManagerScript : MonoBehaviour
 {
     public AudioClip[] BGM;
     public AudioClip[] MainMenuBGM;
+    public AudioClip[] GameOverMusic;
     public AudioClip[] ButtonHover;
     public AudioClip[] ButtonClicked;
     public AudioClip[] Transition;
@@ -60,6 +61,17 @@ public class SoundManagerScript : MonoBehaviour
         while (true)
         {
             AudioClip audioClip = BGM[Random.Range(0, BGM.Length)];
+            bgmSource.clip = audioClip;
+            bgmSource.volume = BGMVolume;
+            bgmSource.PlayOneShot(bgmSource.clip);
+            yield return new WaitForSeconds(audioClip.length);
+        }
+    }
+    public IEnumerator StartGameOverMusic()
+    {
+        while (true)
+        {
+            AudioClip audioClip = GameOverMusic[Random.Range(0, GameOverMusic.Length)];
             bgmSource.clip = audioClip;
             bgmSource.volume = BGMVolume;
             bgmSource.PlayOneShot(bgmSource.clip);

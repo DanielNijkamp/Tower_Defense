@@ -2,15 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class TileScript : MonoBehaviour
 {
-    public bool IsBuildable;
-
-
-    public void Test()
-    {
-        print("test");
-    }
+    
+    public GameObject ShopCanvas;
+    
 }
 

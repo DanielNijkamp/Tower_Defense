@@ -4755,6 +4755,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ec68dc4f1082ab144be508e89a8e9285, type: 3}
   MainMenuBGM:
   - {fileID: 8300000, guid: 2a648ab7741b1734e833f887d1c3d049, type: 3}
+  GameOverMusic:
+  - {fileID: 8300000, guid: b29195ac512f26e42aa660332f06d94b, type: 3}
   ButtonHover:
   - {fileID: 8300000, guid: 6f6b879ae17116e48a0165a26d37f0fc, type: 3}
   ButtonClicked:
@@ -8571,10 +8573,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -484
       objectReference: {fileID: 0}
+    - target: {fileID: 3338815108578814253, guid: 1ecaba7637191b44d91e1f67c29c4eb8, type: 3}
+      propertyPath: m_UpdateMode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3338815108578814254, guid: 1ecaba7637191b44d91e1f67c29c4eb8, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 3338815108578814254, guid: 1ecaba7637191b44d91e1f67c29c4eb8, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3338815108578814254, guid: 1ecaba7637191b44d91e1f67c29c4eb8, type: 3}
       propertyPath: m_PlaneDistance
       value: 50
