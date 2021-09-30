@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private float arrivalThreshold;
+    [SerializeField] private float RotationSpeed;
     public int health;
     public int DamageToPlayer;
     public Path path;
@@ -24,8 +25,8 @@ public class Enemy : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
         //tank
-        //Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        //transform.rotation = Quaternion.Slerp(transform.rotation, rotation, speed * Time.deltaTime);
+        Quaternion rotation = Quaternion.AngleAxis(angle, transform.forward);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation,RotationSpeed * Time.deltaTime);
 
         float step = speed * Time.deltaTime;
         transform.position = Vector2.MoveTowards(transform.position, currentWaypoint.getPosition(), step);
