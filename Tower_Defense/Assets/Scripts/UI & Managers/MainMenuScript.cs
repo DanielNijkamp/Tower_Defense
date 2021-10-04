@@ -62,23 +62,7 @@ public class MainMenuScript : MonoBehaviour
 
 
 
-    /*IEnumerator LoadAsync(int sceneIndex)
-    {
-        AsyncOperation operation = SceneManager.LoadSceneAsync("GameScene");
-        return null;
-        while (!operation.isDone)
-        {
-            float progress = Mathf.Clamp01(operation.progress / .9f);
-            slider.value = progress;
-            ProgressText.text = progress * 100f + "%";
-            yield return null;
-        }
-        if (operation.isDone)
-        {
-            LoadingCanvas.SetActive(false);
-
-        }
-    }*/
+    
     public void TrolPlayer()
     {
         StartCoroutine(Trolcommand());

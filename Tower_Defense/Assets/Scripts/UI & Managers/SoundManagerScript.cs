@@ -16,6 +16,7 @@ public class SoundManagerScript : MonoBehaviour
     public float BGMVolume;
     public float SFXVolume;
     public bool GameStarted = false;
+    
 
     public AudioSource sfxSource;
     public AudioSource bgmSource;
@@ -58,7 +59,7 @@ public class SoundManagerScript : MonoBehaviour
     }
     public IEnumerator StartBGMMusic()
     {
-        while (true)
+        while (true && GameStarted == true)
         {
             AudioClip audioClip = BGM[Random.Range(0, BGM.Length)];
             bgmSource.clip = audioClip;

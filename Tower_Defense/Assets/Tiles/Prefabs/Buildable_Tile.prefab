@@ -408,7 +408,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 72764424526147340}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2475710362189163807}
+        m_TargetAssemblyTypeName: TileScript, Assembly-CSharp
+        m_MethodName: AoE_Pressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1479089690568153557
 GameObject:
   m_ObjectHideFlags: 0
@@ -926,7 +938,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5388768711169020055}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2475710362189163807}
+        m_TargetAssemblyTypeName: TileScript, Assembly-CSharp
+        m_MethodName: HealthPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2475710362189163805
 GameObject:
   m_ObjectHideFlags: 0
@@ -1026,7 +1050,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61c64fc7c4425aa49aacbc6ed20303d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HasTower: 0
   ShopCanvas: {fileID: 2847408918465416524}
+  RapidFireButton: {fileID: 5243852786860482967}
+  AoE_Button: {fileID: 5772522926509351583}
+  SlowButton: {fileID: 3377500120566387699}
+  MoneyButton: {fileID: 8385967424592306342}
+  HealthButton: {fileID: 1047481457882096639}
+  RapidFireCost: 100
+  AoE_Cost: 500
+  SlowCost: 300
+  MoneyCost: 800
+  HealthCost: 1000
+  RapidFireTower: {fileID: 4423597134043558120, guid: 180e2ae97be5c304e9a8854d044b4815, type: 3}
+  AoE_Tower: {fileID: 4989540753002856290, guid: 06cfbd3002bb4154eb7b94aed8e7771a, type: 3}
+  SlowTower: {fileID: 7066177463607670479, guid: 1a5218a3e0ab3044fa59e3dd2c49b1d3, type: 3}
+  MoneyTower: {fileID: 0}
+  HealthTower: {fileID: 0}
 --- !u!61 &1400063841896020122
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1183,7 +1223,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8918827692644240510}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2475710362189163807}
+        m_TargetAssemblyTypeName: TileScript, Assembly-CSharp
+        m_MethodName: RapidPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2847408918465416524
 GameObject:
   m_ObjectHideFlags: 0
@@ -1637,7 +1689,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1450484434423286570}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2475710362189163807}
+        m_TargetAssemblyTypeName: TileScript, Assembly-CSharp
+        m_MethodName: SlowPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5382130315318723470
 GameObject:
   m_ObjectHideFlags: 0
@@ -1760,7 +1824,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7012610321407440039}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2475710362189163807}
+        m_TargetAssemblyTypeName: TileScript, Assembly-CSharp
+        m_MethodName: MoneyPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5707135954941942756
 GameObject:
   m_ObjectHideFlags: 0

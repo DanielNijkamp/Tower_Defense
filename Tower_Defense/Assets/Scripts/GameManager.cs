@@ -4,17 +4,35 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class GameUI : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
     public int PlayerHealth = 100;
-    public int PlayerWealth = 200;
+    public int PlayerWealth;
+
+    public int startingWealth = 300;
+    public int EnemyDeathReward = 75;
+    public int EnemyHitReward = 15;
+
+    public int WaveCount;
+
+
     public TextMeshProUGUI WealthText;
     public Toggle speedToggle;
+
     public GameObject GameOverCanvas;
     public GameObject GameOverSelect;
     public Animator gameoverTransition;
 
+    int[,] Waves = {
+        {},
+        {},
+    };
+
     private void Start()
+    {
+        PlayerWealth = startingWealth;
+    }
+    private void Update()
     {
         WealthText.text = PlayerWealth + " ";
     }

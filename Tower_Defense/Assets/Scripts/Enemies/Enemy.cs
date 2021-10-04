@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private float speed;
+    public float speed;
+    public float baseSpeed;
+
     [SerializeField] private float arrivalThreshold;
     [SerializeField] private float RotationSpeed;
     public int health;
@@ -13,10 +16,15 @@ public class Enemy : MonoBehaviour
     public Path path;
     public Waypoint currentWaypoint;
     public TextMeshProUGUI HealthText;
-    
+    public bool isTank;
+    public Slider Healthbar;
+
+
     private void Start()
     {
-        HealthText.text = FindObjectOfType<GameUI>().PlayerHealth + " ";
+        
+        HealthText = GameObject.Find("HealthTextObject").GetComponent<TextMeshProUGUI>();
+        HealthText.text = FindObjectOfType<GameManager>().PlayerHealth + " ";
         SetupPath();
     }
     private void FixedUpdate()
@@ -28,8 +36,7 @@ public class Enemy : MonoBehaviour
         Quaternion rotation = Quaternion.AngleAxis(angle, transform.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation,RotationSpeed * Time.deltaTime);
 
-        float step = speed * Time.deltaTime;
-        transform.position = Vector2.MoveTowards(transform.position, currentWaypoint.getPosition(), step);
+        transform.position = Vector2.MoveTowards(transform.position, currentWaypoint.getPosition(), speed * Time.deltaTime);
         float distanceToWaypoint = Vector2.Distance(transform.position, currentWaypoint.getPosition());
         if (distanceToWaypoint <= arrivalThreshold)
         {
@@ -43,6 +50,17 @@ public class Enemy : MonoBehaviour
 
             }
         }
+        this.Healthbar.value = health;
+
+        if (health <= 0)
+        {
+            Die();
+        }
+        if (isTank)
+        {
+            Healthbar.transform.position = new Vector2(this.transform.position.x, this.transform.position.y + 0.6f);
+        }
+        
         
     }
     void SetupPath()
@@ -50,14 +68,33 @@ public class Enemy : MonoBehaviour
         path = FindObjectOfType<Path>();
         currentWaypoint = path.getPathStart();
     }
+    void Die()
+    {
+        if (isTank)
+        {
+            Destroy(transform.parent.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        
+        
+    }
     void PathComplete(int value)
     {
-        int newHealth = FindObjectOfType<GameUI>().PlayerHealth -= value;
-        HealthText.text =  newHealth + " ";
-        Destroy(gameObject);
-        if (FindObjectOfType<GameUI>().PlayerHealth == 0)
+        int newHealth = FindObjectOfType<GameManager>().PlayerHealth -= value;
+        HealthText.text = newHealth + " ";
+        Die();
+        if (FindObjectOfType<GameManager>().PlayerHealth <= 0)
         {
-            FindObjectOfType<GameUI>().Endgame();
+            
+            FindObjectOfType<GameManager>().Endgame();
         }
+        
+    }
+    private void Awake()
+    {
+        speed = baseSpeed;
     }
 }
