@@ -83,9 +83,9 @@ public class Enemy : MonoBehaviour
     }
     void PathComplete(int value)
     {
+        Die();
         int newHealth = FindObjectOfType<GameManager>().PlayerHealth -= value;
         HealthText.text = newHealth + " ";
-        Die();
         if (FindObjectOfType<GameManager>().PlayerHealth <= 0)
         {
             

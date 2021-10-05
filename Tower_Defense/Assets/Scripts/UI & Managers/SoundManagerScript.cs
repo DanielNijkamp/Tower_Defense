@@ -9,9 +9,18 @@ public class SoundManagerScript : MonoBehaviour
     public AudioClip[] BGM;
     public AudioClip[] MainMenuBGM;
     public AudioClip[] GameOverMusic;
+    public AudioClip[] BossMusic1;
+
     public AudioClip[] ButtonHover;
     public AudioClip[] ButtonClicked;
     public AudioClip[] Transition;
+
+    public AudioClip [] RapidFire_Tower;
+    public AudioClip [] High_Cal_Tower;
+    public AudioClip [] AoE_Tower;
+    public AudioClip [] Slow_Tower;
+    public AudioClip [] Health_Tower;
+    public AudioClip [] Money_Tower;
 
     public float BGMVolume;
     public float SFXVolume;

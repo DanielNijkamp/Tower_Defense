@@ -66,15 +66,15 @@ public class MainMenuScript : MonoBehaviour
     public void TrolPlayer()
     {
         StartCoroutine(Trolcommand());
-        Cursor.lockState = CursorLockMode.Confined;
-        Cursor.lockState = CursorLockMode.Locked;
         FindObjectOfType<SoundManagerScript>().StopMusic();
     }
     IEnumerator Trolcommand()
     {
+        //Cursor.lockState = CursorLockMode.Confined;
+        //Cursor.lockState = CursorLockMode.Locked;
         yield return new WaitForSeconds(5);
-        //Application.OpenURL("https://www.youtube.com/channel/UCuNQHiZDizZF9ErJEi8Gzzg");
         yield return new WaitForSeconds(myFloat);
+        //Application.OpenURL("https://www.youtube.com/channel/UCuNQHiZDizZF9ErJEi8Gzzg");
         Application.Quit();
 
     }

@@ -17,7 +17,6 @@ public class SlowTowerScript : MonoBehaviour
             {
                 if (collision.gameObject.GetComponent<Enemy>().isTank)
                 {
-                    print("test");
                     collision.gameObject.GetComponent<Enemy>().speed = TankSlowEffect;
                 }
                 else
@@ -39,7 +38,6 @@ public class SlowTowerScript : MonoBehaviour
             {
                 if (collision.gameObject.GetComponent<Enemy>().isTank)
                 {
-                    print("test2");
                     collision.gameObject.GetComponent<Enemy>().speed = collision.gameObject.GetComponent<Enemy>().baseSpeed;
                 }
                 else

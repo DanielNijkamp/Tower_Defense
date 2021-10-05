@@ -12,9 +12,9 @@ public class TileScript : MonoBehaviour
     public GameObject ShopCanvas;
     public Button RapidFireButton, AoE_Button, SlowButton, MoneyButton, HealthButton;
 
-    public int RapidFireCost = 100, AoE_Cost = 500, SlowCost = 300, MoneyCost = 800, HealthCost = 1000;
+    public int RapidFireCost = 100, AoE_Cost = 500, SlowCost = 300, MoneyCost = 800, HealthCost = 1000, HighCalCost = 1000;
 
-    public GameObject RapidFireTower, AoE_Tower, SlowTower, MoneyTower, HealthTower;
+    public GameObject RapidFireTower, AoE_Tower, SlowTower, MoneyTower, HealthTower, High_Cal_Tower;
 
     private void Start()
     {
@@ -79,6 +79,18 @@ public class TileScript : MonoBehaviour
             newTower.transform.position = this.transform.position;
 
             FindObjectOfType<GameManager>().PlayerWealth -= HealthCost;
+
+            this.HasTower = true;
+        }
+    }
+    public void High_Cal_Pressed()
+    {
+        if (FindObjectOfType<GameManager>().PlayerWealth > 0 && FindObjectOfType<GameManager>().PlayerWealth - HighCalCost >= 0)
+        {
+            GameObject newTower = Instantiate(High_Cal_Tower);
+            newTower.transform.position = this.transform.position;
+
+            FindObjectOfType<GameManager>().PlayerWealth -= HighCalCost;
 
             this.HasTower = true;
         }
