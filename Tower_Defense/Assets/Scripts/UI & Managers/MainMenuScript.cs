@@ -16,6 +16,8 @@ public class MainMenuScript : MonoBehaviour
     public VideoClip TrolClip;
     float myFloat;
     public Animator Transition;
+
+    private bool IsTrolling = false;
     //Loading screen wip
 
 
@@ -23,11 +25,15 @@ public class MainMenuScript : MonoBehaviour
     //public TextMeshProUGUI ProgressText;
 
     //public GameObject MainMenuBackButton;
-    private void Start()
+    public void Start()
     {
         myFloat = (float)TrolClip.length;
+        Transition = FindObjectOfType<LevelLoader>().Transition;
     }
-    
+    public void StartNewScene()
+    {
+        FindObjectOfType<LevelLoader>().LoadNextLevel();
+    }
     public void QuitGame()
     {
         Application.Quit();
@@ -67,6 +73,7 @@ public class MainMenuScript : MonoBehaviour
     {
         StartCoroutine(Trolcommand());
         FindObjectOfType<SoundManagerScript>().StopMusic();
+        IsTrolling = true;
     }
     IEnumerator Trolcommand()
     {
@@ -74,9 +81,16 @@ public class MainMenuScript : MonoBehaviour
         //Cursor.lockState = CursorLockMode.Locked;
         yield return new WaitForSeconds(5);
         yield return new WaitForSeconds(myFloat);
-        //Application.OpenURL("https://www.youtube.com/channel/UCuNQHiZDizZF9ErJEi8Gzzg");
         Application.Quit();
 
+    }
+    private void OnApplicationQuit()
+    {
+        if (IsTrolling)
+        {
+            Application.OpenURL("https://www.youtube.com/channel/UCuNQHiZDizZF9ErJEi8Gzzg");
+        }
+        
     }
 
 

@@ -1204,11 +1204,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasTower: 0
   ShopCanvas: {fileID: 2847408918465416524}
-  RapidFireButton: {fileID: 5243852786860482967}
-  AoE_Button: {fileID: 5772522926509351583}
-  SlowButton: {fileID: 3377500120566387699}
-  MoneyButton: {fileID: 8385967424592306342}
-  HealthButton: {fileID: 1047481457882096639}
   RapidFireCost: 100
   AoE_Cost: 500
   SlowCost: 300
@@ -1794,7 +1789,7 @@ GameObject:
   - component: {fileID: 3841489168022863268}
   - component: {fileID: 7554034150237537998}
   m_Layer: 0
-  m_Name: Health_Button (1)
+  m_Name: High_Cal_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

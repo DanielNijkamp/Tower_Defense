@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
 
-
-
 public class SettingsScript : MonoBehaviour
 {
     public float SFXSliderVolume;
@@ -21,6 +19,7 @@ public class SettingsScript : MonoBehaviour
     public TextMeshProUGUI SFXText;
 
     public Button backButton;
+    public Button trollbutton;
 
     public GameObject MainMenuCanvas;
 
@@ -218,15 +217,6 @@ public class SettingsScript : MonoBehaviour
 
     private void Awake()
     {
-        if (!setscript)
-        {
-            DontDestroyOnLoad(gameObject);
-            setscript = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
         GetInfo();
         Initiallize();
 

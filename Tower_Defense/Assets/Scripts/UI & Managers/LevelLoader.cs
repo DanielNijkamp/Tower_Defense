@@ -9,7 +9,12 @@ public class LevelLoader : MonoBehaviour
 
     public static LevelLoader Instance;
     public Animator Transition;
-    
+    //public GameObject _MainMenuCanvas;
+
+    public void Start()
+    {
+        //GameObject _MainMenuCanvas = FindObjectOfType<MainMenuScript>().MainMenuCanvas;
+    }
     public void LoadNextLevel()
     {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
@@ -17,33 +22,34 @@ public class LevelLoader : MonoBehaviour
         
         
     }
+    
+    
+
     IEnumerator LoadLevel(int levelIndex)
     {
-        
-        
+
+        FindObjectOfType<SoundManagerScript>().StopMusic();
         Transition.SetTrigger("Start");
         yield return new WaitForSeconds(1);
         AsyncOperation operation = SceneManager.LoadSceneAsync(levelIndex);
-        /*while (!operation.isDone)
-        {
-            float progress = Mathf.Clamp01(operation.progress / .9f);
-            slider.value = progress;
-            ProgressText.text = progress * 100f + "%";
-            yield return null;
-        }*/
-        if (operation.isDone)
-        {
-            //LoadingCanvas.SetActive(false);
-            Debug.Log("Scene Loaded");
-        }
         StartCoroutine(FindObjectOfType<SoundManagerScript>().StartBGMMusic());
         Transition.SetTrigger("End");
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSecondsRealtime(0.5f);
         Transition.SetTrigger("Remove_Transition");
-        
+        yield return new WaitForSecondsRealtime(0.1f);
+        Transition.SetTrigger("Remove_Transition");
+        Transition.ResetTrigger("Remove_Transition");
+        yield break;
+
 
     }
-    private void Awake()
+     
+
+    void Awake()
+    {
+        this.InstantiateController();
+    }
+        private void InstantiateController()
     {
         if (Instance == null)
         {
@@ -54,10 +60,10 @@ public class LevelLoader : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
+
     }
-    public void Update()
-    {
-      
-    }
-    
 }
+ 
+    
+

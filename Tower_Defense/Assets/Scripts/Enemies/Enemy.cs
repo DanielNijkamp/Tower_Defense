@@ -11,13 +11,14 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private float arrivalThreshold;
     [SerializeField] private float RotationSpeed;
-    public int health;
+    public float health;
     public int DamageToPlayer;
     public Path path;
     public Waypoint currentWaypoint;
     public TextMeshProUGUI HealthText;
     public bool isTank;
     public Slider Healthbar;
+
 
 
     private void Start()
@@ -93,6 +94,13 @@ public class Enemy : MonoBehaviour
         }
         
     }
+    public void TakeDamage(float amount)
+    {
+        health -= amount;
+    }
+    
+
+    
     private void Awake()
     {
         speed = baseSpeed;

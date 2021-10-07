@@ -10,7 +10,7 @@ public class TileScript : MonoBehaviour
     private bool checkedTower = false;
     public bool HasTower;
     public GameObject ShopCanvas;
-    public Button RapidFireButton, AoE_Button, SlowButton, MoneyButton, HealthButton;
+    //public Button RapidFireButton, AoE_Button, SlowButton, MoneyButton, HealthButton, HighCalButton;
 
     public int RapidFireCost = 100, AoE_Cost = 500, SlowCost = 300, MoneyCost = 800, HealthCost = 1000, HighCalCost = 1000;
 

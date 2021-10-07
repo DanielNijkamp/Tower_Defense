@@ -161,6 +161,115 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &3124211293440083977
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5778745029958172254}
+  - component: {fileID: 2770363152418216092}
+  m_Layer: 0
+  m_Name: Freeform Light 2D
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5778745029958172254
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3124211293440083977}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7671996127651870644}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2770363152418216092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3124211293440083977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LightType: 1
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 0.5943396, g: 0, b: 0, a: 1}
+  m_Intensity: 1.29
+  m_LightVolumeOpacity: 1
+  m_ApplyToSortingLayers: 00000000
+  m_LightCookieSprite: {fileID: 0}
+  m_UseNormalMap: 0
+  m_LightOrder: 0
+  m_AlphaBlendOnOverlap: 0
+  m_ShadowIntensity: 0
+  m_ShadowVolumeIntensity: 0
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
+  m_PointLightDistance: 3
+  m_PointLightQuality: 1
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.7877178, y: -0.18351227, z: 0}
+  - {x: -0.595376, y: -0.228917, z: 0}
+  - {x: -0.36184263, y: -0.255813, z: 0}
+  - {x: -0.10852766, y: -0.27267873, z: 0}
+  - {x: 0.14165688, y: -0.2687782, z: 0}
+  - {x: 0.32362032, y: -0.25626808, z: 0}
+  - {x: 0.558403, y: -0.22880226, z: 0}
+  - {x: 0.77217627, y: -0.17968476, z: 0}
+  - {x: 0.9540491, y: -0.13143927, z: 0}
+  - {x: 1.1113315, y: -0.097631514, z: 0}
+  - {x: 1.2637525, y: -0.04002601, z: 0}
+  - {x: 1.445015, y: 0.03912404, z: 0}
+  - {x: 1.6090112, y: 0.17576113, z: 0}
+  - {x: 1.680234, y: 0.295275, z: 0}
+  - {x: 1.7026715, y: 0.4612203, z: 0}
+  - {x: 1.6878276, y: 0.5805886, z: 0}
+  - {x: 1.6091232, y: 0.6846101, z: 0}
+  - {x: 1.450768, y: 0.82312226, z: 0}
+  - {x: 1.2918501, y: 0.8924785, z: 0}
+  - {x: 1.1185865, y: 0.9747313, z: 0}
+  - {x: 0.93628454, y: 1.0347043, z: 0}
+  - {x: 0.76025057, y: 1.0676811, z: 0}
+  - {x: 0.56977797, y: 1.0948768, z: 0}
+  - {x: 0.34306097, y: 1.1252242, z: 0}
+  - {x: 0.12669134, y: 1.1386385, z: 0}
+  - {x: -0.08851242, y: 1.1396099, z: 0}
+  - {x: -0.23981285, y: 1.1441088, z: 0}
+  - {x: -0.41938734, y: 1.1108384, z: 0}
+  - {x: -0.61178637, y: 1.0948768, z: 0}
+  - {x: -0.75894547, y: 1.0610462, z: 0}
+  - {x: -0.9290595, y: 1.0182939, z: 0}
+  - {x: -1.1099072, y: 0.98136616, z: 0}
+  - {x: -1.3544626, y: 0.851894, z: 0}
+  - {x: -1.5702505, y: 0.69365025, z: 0}
+  - {x: -1.6730113, y: 0.52597374, z: 0}
+  - {x: -1.6853375, y: 0.3483908, z: 0}
+  - {x: -1.6073675, y: 0.21964133, z: 0}
+  - {x: -1.4989276, y: 0.1127477, z: 0}
+  - {x: -1.3447971, y: 0.006302595, z: 0}
+  - {x: -1.1674471, y: -0.06879747, z: 0}
+  - {x: -0.97829294, y: -0.13592303, z: 0}
 --- !u!1 &7278532520837568886
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,6 +376,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children:
   - {fileID: 1051953596709247918}
+  - {fileID: 5778745029958172254}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -342,11 +452,8 @@ MonoBehaviour:
   path: {fileID: 0}
   currentWaypoint: {fileID: 0}
   HealthText: {fileID: 0}
+  isTank: 0
   Healthbar: {fileID: 2154010379756214512}
-  BaseEnemy: {fileID: 0}
-  FastEnemy: {fileID: 0}
-  HeavyEnemy: {fileID: 0}
-  TankEnemy: {fileID: 0}
 --- !u!61 &-6412549786179175485
 BoxCollider2D:
   m_ObjectHideFlags: 0
