@@ -515,11 +515,8 @@ MonoBehaviour:
   path: {fileID: 0}
   currentWaypoint: {fileID: 0}
   HealthText: {fileID: 0}
+  isTank: 0
   Healthbar: {fileID: 1050392725742630610}
-  BaseEnemy: {fileID: 0}
-  FastEnemy: {fileID: 0}
-  HeavyEnemy: {fileID: 0}
-  TankEnemy: {fileID: 0}
 --- !u!61 &7163385710629840956
 BoxCollider2D:
   m_ObjectHideFlags: 0

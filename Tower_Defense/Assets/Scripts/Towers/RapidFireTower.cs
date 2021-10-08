@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class RapidFireTower : MonoBehaviour
 {
-    private float range;
-    private float damage;
-    private float timeBetweenShots;
+    public float damage = 2.5f;
+    public float timeBetweenShots;
+    private float NextTimeToShoot;
     private float Rotationspeed = 5;
 
-    public GameObject Barrel1, Barrel2, Barrel3;
+    public GameObject[] GunBarrels;
+    public GameObject bullet;
 
     private GameObject currentTarget;
 
@@ -40,13 +41,28 @@ public class RapidFireTower : MonoBehaviour
         if (currentTarget != null)
         {
             
-            var offset = 180f;
+            var offset = 0f;
             Vector3 dir = currentTarget.transform.position - transform.position;
             float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
             Quaternion rotation = Quaternion.Euler(new Vector3(0, 0, angle + offset));
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Rotationspeed * Time.deltaTime);
+
+            if (Time.time >= NextTimeToShoot)
+            {
+                Shoot();
+                NextTimeToShoot = Time.time + timeBetweenShots;
+            }
         }
     
+
+    }
+    private void Shoot()
+    {
+        int random = Random.Range(0, GunBarrels.Length);
+        GameObject newBullet = Instantiate(bullet);
+        newBullet.GetComponent<BulletScript>().bulletdamage = damage;
+        newBullet.transform.position = GunBarrels[random].gameObject.transform.position;
+        newBullet.transform.rotation = this.transform.rotation;
 
     }
 }

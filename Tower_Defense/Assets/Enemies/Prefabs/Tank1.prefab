@@ -158,12 +158,12 @@ MonoBehaviour:
   baseSpeed: 0.2
   arrivalThreshold: 0.1
   RotationSpeed: 1.5
-  health: 1000
+  health: 3000
   DamageToPlayer: 500
   path: {fileID: 0}
   currentWaypoint: {fileID: 0}
   HealthText: {fileID: 0}
-  isTank: 0
+  isTank: 1
   Healthbar: {fileID: 489500208743936600}
 --- !u!1 &4967437656306824002
 GameObject:
@@ -495,9 +495,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1000
-  m_WholeNumbers: 1
-  m_Value: 1000
+  m_MaxValue: 3000
+  m_WholeNumbers: 0
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

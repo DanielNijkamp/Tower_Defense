@@ -31,6 +31,7 @@ public class LevelLoader : MonoBehaviour
         FindObjectOfType<SoundManagerScript>().StopMusic();
         Transition.SetTrigger("Start");
         yield return new WaitForSeconds(1);
+        FindObjectOfType<MainMenuScript>().MainMenuCanvas.SetActive(false);
         AsyncOperation operation = SceneManager.LoadSceneAsync(levelIndex);
         StartCoroutine(FindObjectOfType<SoundManagerScript>().StartBGMMusic());
         Transition.SetTrigger("End");
