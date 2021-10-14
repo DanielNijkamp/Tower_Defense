@@ -15,7 +15,7 @@ public class SlowTowerScript : MonoBehaviour
             FoundEnemies.Add(collision.gameObject);
             if (FoundEnemies.Contains(collision.gameObject))
             {
-                if (collision.gameObject.GetComponent<Enemy>().isTank)
+                if (collision.gameObject.GetComponent<Enemy>().isTopDown)
                 {
                     collision.gameObject.GetComponent<Enemy>().speed = TankSlowEffect;
                 }
@@ -36,7 +36,7 @@ public class SlowTowerScript : MonoBehaviour
             FoundEnemies.Remove(collision.gameObject);
             if (!FoundEnemies.Contains(collision.gameObject))
             {
-                if (collision.gameObject.GetComponent<Enemy>().isTank)
+                if (collision.gameObject.GetComponent<Enemy>().isTopDown)
                 {
                     collision.gameObject.GetComponent<Enemy>().speed = collision.gameObject.GetComponent<Enemy>().baseSpeed;
                 }

@@ -716,7 +716,7 @@ ParticleSystem:
     arc:
       value: 360
       mode: 0
-      spread: 0
+      spread: 0.5
       speed:
         serializedVersion: 2
         minMaxState: 0
@@ -4704,9 +4704,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 268fb4d91644e42409780f6594097609, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xRotation: 10
-  yRotation: 3.33
-  zRotation: 4.33
+  xRotation: 0
+  yRotation: 0
+  zRotation: 10
 --- !u!1 &1475198933509334
 GameObject:
   m_ObjectHideFlags: 0

@@ -4816,7 +4816,7 @@ GameObject:
   - component: {fileID: 4410522793625482518}
   - component: {fileID: 5897409536932207165}
   - component: {fileID: 4366332984416379679}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Slow_Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}

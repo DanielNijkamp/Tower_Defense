@@ -4,33 +4,37 @@ using UnityEngine;
 
 public class RapidFireTower : MonoBehaviour
 {
-    public float damage = 2.5f;
+    public float damage;
     public float timeBetweenShots;
     private float NextTimeToShoot;
     private float Rotationspeed = 5;
+    public Animator BarrelAnimation;
 
     public GameObject[] GunBarrels;
     public GameObject bullet;
 
+    private GameObject colliderobject;
+
     private GameObject currentTarget;
 
-    public List<GameObject> NearbyEnemies = new List<GameObject>();
+    [SerializeField] private List<GameObject> RapidNearbyEnemies = new List<GameObject>();
 
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Enemy")
         {
-            NearbyEnemies.Add(collision.gameObject);
-            currentTarget = collision.gameObject;
+            colliderobject = collision.gameObject;
+            RapidNearbyEnemies.Add(colliderobject);
+            
         }
     }
     public void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "Enemy")
         {
-            NearbyEnemies.Remove(collision.gameObject);
-            if (NearbyEnemies.Count == 0)
+            RapidNearbyEnemies.Remove(colliderobject);
+            if (RapidNearbyEnemies.Count == 0)
             {
                 currentTarget = null;
             }
@@ -38,7 +42,8 @@ public class RapidFireTower : MonoBehaviour
     }
     private void Update()
     {
-        if (currentTarget != null)
+        updateNearestEnemy();
+        if (currentTarget != null && RapidNearbyEnemies.Count > 0)
         {
             
             var offset = 0f;
@@ -56,13 +61,48 @@ public class RapidFireTower : MonoBehaviour
     
 
     }
+    private void updateNearestEnemy()
+    {
+        float distance = Mathf.Infinity;
+
+        foreach (GameObject enemy in RapidNearbyEnemies)
+        {
+            if (enemy != null)
+            {
+                float _distance = (transform.position - enemy.transform.position).magnitude;
+                if (_distance < distance)
+                {
+                    distance = _distance;
+                    currentTarget = enemy;
+                }
+            }
+
+        }
+
+    }
     private void Shoot()
     {
+        FindObjectOfType<SoundManagerScript>().PlayRapidFireShot();
         int random = Random.Range(0, GunBarrels.Length);
+        if (random == 0)
+        {
+            BarrelAnimation.Play("Barrel1_Fire");
+        }
+        if (random == 1)
+        {
+            BarrelAnimation.Play("Barrel2_Fire");
+        }
+        if (random == 2)
+        {
+            BarrelAnimation.Play("Barrel3_Fire");
+        }
         GameObject newBullet = Instantiate(bullet);
         newBullet.GetComponent<BulletScript>().bulletdamage = damage;
         newBullet.transform.position = GunBarrels[random].gameObject.transform.position;
         newBullet.transform.rotation = this.transform.rotation;
+        
+
+        
 
     }
 }

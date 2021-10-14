@@ -16,8 +16,12 @@ public class Enemy : MonoBehaviour
     public Path path;
     public Waypoint currentWaypoint;
     public TextMeshProUGUI HealthText;
-    public bool isTank;
+    public bool isTopDown;
     public Slider Healthbar;
+
+
+
+    public bool isHit;
 
 
 
@@ -33,7 +37,6 @@ public class Enemy : MonoBehaviour
         Vector2 direction = currentWaypoint.getPosition() - new Vector2(transform.position.x, transform.position.y);
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
-        //tank
         Quaternion rotation = Quaternion.AngleAxis(angle, transform.forward);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation,RotationSpeed * Time.deltaTime);
 
@@ -52,12 +55,11 @@ public class Enemy : MonoBehaviour
             }
         }
         this.Healthbar.value = health;
-
         if (health <= 0)
         {
             Die();
         }
-        if (isTank)
+        if (isTopDown)
         {
             Healthbar.transform.position = new Vector2(this.transform.position.x, this.transform.position.y + 0.6f);
         }
@@ -71,7 +73,7 @@ public class Enemy : MonoBehaviour
     }
     void Die()
     {
-        if (isTank)
+        if (isTopDown)
         {
             Destroy(transform.parent.gameObject);
         }
@@ -98,11 +100,9 @@ public class Enemy : MonoBehaviour
     {
         health -= amount;
     }
-    
-
-    
     private void Awake()
     {
         speed = baseSpeed;
     }
+    
 }

@@ -9,6 +9,7 @@ using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
+    
     public int PlayerHealth = 100;
     public int PlayerWealth;
 
@@ -45,11 +46,14 @@ public class GameManager : MonoBehaviour
         speedToggle.isOn = false;
         IsPaused = false;
         PlayerWealth = startingWealth;
+        Physics2D.IgnoreLayerCollision(6, 8, true);
+
 
 
     }
     private void Update()
     {
+        
         WealthText.text = PlayerWealth + " ";
         if (Input.GetKeyDown(KeyCode.Escape))
         {

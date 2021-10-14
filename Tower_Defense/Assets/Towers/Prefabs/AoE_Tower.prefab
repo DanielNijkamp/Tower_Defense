@@ -92,7 +92,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4989540753002856293}
   - component: {fileID: 626181184630034014}
-  m_Layer: 0
+  - component: {fileID: 3143409602187871433}
+  - component: {fileID: 1049866400700614792}
+  m_Layer: 8
   m_Name: AoE_Tower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4989540753002856290}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.84, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
   - {fileID: 4989540753407549544}
@@ -137,6 +139,46 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &3143409602187871433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4989540753002856290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2a3a966ef4f4334cb992f56af26c099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
+  timeBetweenShots: 2
+  nextTarget: {fileID: 0}
+  AoE_Nearby: []
+  radius: 1
+  chaincount: 0
+  maxchaincount: 3
+  lightningcheckprefab: {fileID: 5837517788373463998, guid: 25b5c543cf2570a419dc76ffb9f3db27, type: 3}
+  lightningboltprefab: {fileID: 1083001920108521454, guid: a6c631fa9aaa8b14d91893794cbda41b, type: 3}
+  lightningBolt: {fileID: 0}
+  lightningChecker: {fileID: 0}
+  hasShot: 0
+--- !u!58 &1049866400700614792
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4989540753002856290}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 8
 --- !u!1 &4989540753407549545
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,8 +276,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4989540753687771098}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.05, y: 0, z: -0.09}
-  m_LocalScale: {x: 0.72093815, y: 0.72093815, z: 0.72093815}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.7}
   m_Children: []
   m_Father: {fileID: 4989540753002856293}
   m_RootOrder: 1

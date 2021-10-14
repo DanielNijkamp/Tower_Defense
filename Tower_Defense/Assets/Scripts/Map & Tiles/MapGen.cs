@@ -12,6 +12,8 @@ public class MapGen : MonoBehaviour
     public GameObject StartTile;
     public GameObject EndTile;
 
+    //public LayerMask _layer;
+
     [SerializeField] private float yOffset;
     [SerializeField] private float xOffset;
 
@@ -56,7 +58,6 @@ public class MapGen : MonoBehaviour
                     GameObject newTile = Instantiate(BuildableTile);
                     newTile.transform.position = new Vector2(y - yOffset, x - xOffset);
                     newTile.transform.parent = MapGenObject.transform;
-                    
                     
                 }
                 else if (TileMap[x, y] == 4)

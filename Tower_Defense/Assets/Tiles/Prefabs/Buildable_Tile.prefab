@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 98484577125149180}
   - component: {fileID: 594056468550163135}
   - component: {fileID: 2188393150630676487}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1911987322879585707}
   - component: {fileID: 1171959588436610545}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 938942342392199904}
   - component: {fileID: 9126343997518959827}
   - component: {fileID: 1535424424777015058}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,7 +296,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3865375546840704270}
   - component: {fileID: 1247392279598290839}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 1430297041779388916}
   - component: {fileID: 1688412613465426268}
   - component: {fileID: 5987591210106878781}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -450,7 +450,7 @@ GameObject:
   - component: {fileID: 843003322707399724}
   - component: {fileID: 72764424526147340}
   - component: {fileID: 5772522926509351583}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AoE_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -583,7 +583,7 @@ GameObject:
   m_Component:
   - component: {fileID: 914719774443336343}
   - component: {fileID: 8853380416350025579}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Toggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -669,7 +669,7 @@ GameObject:
   - component: {fileID: 2775825179557580646}
   - component: {fileID: 5445907220660520686}
   - component: {fileID: 8937483266886092597}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -767,7 +767,7 @@ GameObject:
   m_Component:
   - component: {fileID: 783595057072080472}
   - component: {fileID: 749149060355130084}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -845,7 +845,7 @@ GameObject:
   - component: {fileID: 8396497115680780683}
   - component: {fileID: 8236158877311874291}
   - component: {fileID: 7338521494125899186}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -980,7 +980,7 @@ GameObject:
   - component: {fileID: 7141878749147005112}
   - component: {fileID: 5388768711169020055}
   - component: {fileID: 1047481457882096639}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Health_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1116,9 +1116,10 @@ GameObject:
   - component: {fileID: 2475710362189163807}
   - component: {fileID: 1400063841896020122}
   - component: {fileID: 8382909965678629346}
-  m_Layer: 0
+  - component: {fileID: 4516696635776733634}
+  m_Layer: 6
   m_Name: Buildable_Tile
-  m_TagString: Untagged
+  m_TagString: TIle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1240,8 +1241,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.28, y: 1.28}
-  m_EdgeRadius: 0
+  m_Size: {x: 1.4, y: 1.4}
+  m_EdgeRadius: 0.05
 --- !u!222 &8382909965678629346
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1250,6 +1251,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2475710362189163805}
   m_CullTransparentMesh: 1
+--- !u!50 &4516696635776733634
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2475710362189163805}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0
 --- !u!1 &2614899417496613592
 GameObject:
   m_ObjectHideFlags: 0
@@ -1262,7 +1284,7 @@ GameObject:
   - component: {fileID: 8947686519772571668}
   - component: {fileID: 8918827692644240510}
   - component: {fileID: 5243852786860482967}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RapidButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1397,7 +1419,7 @@ GameObject:
   - component: {fileID: 8130453147432082484}
   - component: {fileID: 1252804261276864055}
   - component: {fileID: 6875940809762512025}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1501,7 +1523,7 @@ GameObject:
   - component: {fileID: 1691494562230074063}
   - component: {fileID: 3689103233349022721}
   - component: {fileID: 1120535370100514759}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1575,7 +1597,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8795487935674322818}
   - component: {fileID: 7233343628111776926}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1653,7 +1675,7 @@ GameObject:
   - component: {fileID: 7477495454736137791}
   - component: {fileID: 1688570176891990661}
   - component: {fileID: 8020169980988702986}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1788,7 +1810,7 @@ GameObject:
   - component: {fileID: 4798523464260119119}
   - component: {fileID: 3841489168022863268}
   - component: {fileID: 7554034150237537998}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: High_Cal_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1922,7 +1944,7 @@ GameObject:
   - component: {fileID: 656125180761635942}
   - component: {fileID: 1177631564817063822}
   - component: {fileID: 7551541303076960509}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1998,7 +2020,7 @@ GameObject:
   - component: {fileID: 4480313970668098707}
   - component: {fileID: 1450484434423286570}
   - component: {fileID: 3377500120566387699}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Slow_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2133,7 +2155,7 @@ GameObject:
   - component: {fileID: 2046731286993137715}
   - component: {fileID: 7012610321407440039}
   - component: {fileID: 8385967424592306342}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Money_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2267,7 +2289,7 @@ GameObject:
   - component: {fileID: 4339250713329442297}
   - component: {fileID: 6823421150793169643}
   - component: {fileID: 702981022234020375}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2400,7 +2422,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8367507290896369391}
   - component: {fileID: 4347588536355549708}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2478,7 +2500,7 @@ GameObject:
   - component: {fileID: 4279168549713131965}
   - component: {fileID: 4498862617486337634}
   - component: {fileID: 6812472053115250688}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2611,7 +2633,7 @@ GameObject:
   m_Component:
   - component: {fileID: 873242602703461723}
   - component: {fileID: 3838310296336262775}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Point Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2689,7 +2711,7 @@ GameObject:
   - component: {fileID: 5245566054061410014}
   - component: {fileID: 3659627088801056883}
   - component: {fileID: 705616577190409752}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2764,7 +2786,7 @@ GameObject:
   - component: {fileID: 4683029287059428169}
   - component: {fileID: 6911858390421747918}
   - component: {fileID: 5260350801716191389}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Text (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2898,7 +2920,7 @@ GameObject:
   - component: {fileID: 4622713913387407140}
   - component: {fileID: 7782089800314390284}
   - component: {fileID: 6079329719294262515}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -9,7 +9,7 @@ using TMPro;
 public class ClickManager : MonoBehaviour
 {
     public int i = 1;
-    private bool HasTower;
+    public LayerMask _layer;
 
 
 
@@ -20,7 +20,8 @@ public class ClickManager : MonoBehaviour
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
 
-            RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
+            _layer = ~_layer;
+            RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero, _layer);
             if (hit.collider != null && hit.transform.gameObject.GetComponent<TileScript>() != null)
             {
                 if (hit.transform.gameObject.GetComponent<TileScript>().HasTower != true)

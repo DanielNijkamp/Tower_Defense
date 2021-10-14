@@ -29,6 +29,8 @@ public class SoundManagerScript : MonoBehaviour
 
     public AudioSource sfxSource;
     public AudioSource bgmSource;
+    public AudioSource rapidTowerSource;
+    public AudioSource highcalTowerSource;
 
     public Button StartButton;
 
@@ -74,7 +76,7 @@ public class SoundManagerScript : MonoBehaviour
             bgmSource.clip = audioClip;
             bgmSource.volume = BGMVolume;
             bgmSource.PlayOneShot(bgmSource.clip);
-            yield return new WaitForSeconds(audioClip.length);
+            yield return new WaitForSecondsRealtime(audioClip.length);
         }
     }
     public IEnumerator StartGameOverMusic()
@@ -85,7 +87,7 @@ public class SoundManagerScript : MonoBehaviour
             bgmSource.clip = audioClip;
             bgmSource.volume = BGMVolume;
             bgmSource.PlayOneShot(bgmSource.clip);
-            yield return new WaitForSeconds(audioClip.length);
+            yield return new WaitForSecondsRealtime(audioClip.length);
         }
     }
 
@@ -97,7 +99,7 @@ public class SoundManagerScript : MonoBehaviour
             bgmSource.clip = audioClip;
             bgmSource.volume = BGMVolume;
             bgmSource.PlayOneShot(bgmSource.clip);
-            yield return new WaitForSeconds(audioClip.length);
+            yield return new WaitForSecondsRealtime(audioClip.length);
         }
     }
     public void MouseOverButton()
@@ -122,6 +124,22 @@ public class SoundManagerScript : MonoBehaviour
         sfxSource.clip = audioClip;
         sfxSource.volume = SFXVolume;
         sfxSource.PlayOneShot(sfxSource.clip);
+    }
+    public void PlayRapidFireShot()
+    {
+        AudioClip audioClip = RapidFire_Tower[0];
+        rapidTowerSource.clip = audioClip;
+        rapidTowerSource.volume = SFXVolume;
+        rapidTowerSource.pitch = (Random.Range(0.6f, 1.2f));
+        rapidTowerSource.PlayOneShot(rapidTowerSource.clip);
+    }
+    public void PlayHC_Shot()
+    {
+        AudioClip audioClip = High_Cal_Tower[0];
+        highcalTowerSource.clip = audioClip;
+        highcalTowerSource.volume = SFXVolume;
+        highcalTowerSource.pitch = (Random.Range(0.6f, 1f));
+        highcalTowerSource.PlayOneShot(highcalTowerSource.clip);
     }
 
 

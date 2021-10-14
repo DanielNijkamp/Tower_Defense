@@ -33,6 +33,7 @@ public class TileScript : MonoBehaviour
             FindObjectOfType<GameManager>().PlayerWealth -= RapidFireCost;
 
             this.HasTower = true;
+            
         }
     }
     public void AoE_Pressed()
@@ -45,6 +46,7 @@ public class TileScript : MonoBehaviour
             FindObjectOfType<GameManager>().PlayerWealth -= AoE_Cost;
 
             this.HasTower = true;
+            
         }
     }
     public void SlowPressed()
@@ -89,10 +91,9 @@ public class TileScript : MonoBehaviour
         {
             GameObject newTower = Instantiate(High_Cal_Tower);
             newTower.transform.position = this.transform.position;
-
             FindObjectOfType<GameManager>().PlayerWealth -= HighCalCost;
-
             this.HasTower = true;
+            Physics2D.IgnoreCollision(newTower.GetComponent<CircleCollider2D>(), this.GetComponent<BoxCollider2D>(), true);
         }
     }
     private void FixedUpdate()
