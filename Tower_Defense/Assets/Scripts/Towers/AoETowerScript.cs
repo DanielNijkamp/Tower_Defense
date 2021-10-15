@@ -84,12 +84,13 @@ public class AoETowerScript : MonoBehaviour
             }
 
         }
+       
 
     }
     public void ResetFire()
     {
-        Destroy(lightningBolt, 1);
-        Destroy(lightningChecker, 1);
+        Destroy(this.lightningBolt, 1);
+        Destroy(this.lightningChecker, 1);
         
         
     }

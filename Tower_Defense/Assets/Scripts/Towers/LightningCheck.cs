@@ -10,13 +10,14 @@ public class LightningCheck : MonoBehaviour
     private int _maxchaincount;
 
     public GameObject AoE_TowerReference;
-    public GameObject lightningBoltprefab;
+    public GameObject lightningBolt;
 
     public List<GameObject> Hit_Enemies = new List<GameObject>();
 
     private void Start()
     {
         _maxchaincount = FindObjectOfType<AoETowerScript>().maxchaincount;
+        Destroy(this.gameObject, FindObjectOfType<AoETowerScript>().timeBetweenShots);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -28,6 +29,7 @@ public class LightningCheck : MonoBehaviour
                 this.Hit_Enemies.Add(anEnemy.gameObject);
                 
             }
+            
         }
     }
     

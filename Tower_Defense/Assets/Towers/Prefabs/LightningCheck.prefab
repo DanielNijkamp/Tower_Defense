@@ -47,7 +47,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 2
+  m_Radius: 1
 --- !u!114 &8414669820608849211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,5 +61,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AoE_TowerReference: {fileID: 4989540753002856290, guid: 06cfbd3002bb4154eb7b94aed8e7771a, type: 3}
-  lightningBoltprefab: {fileID: 1083001920108521454, guid: a6c631fa9aaa8b14d91893794cbda41b, type: 3}
+  lightningBolt: {fileID: 1083001920108521454, guid: a6c631fa9aaa8b14d91893794cbda41b, type: 3}
   Hit_Enemies: []

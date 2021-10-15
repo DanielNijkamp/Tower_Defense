@@ -8,12 +8,14 @@ public class LightningBolt : MonoBehaviour
     public float LightDamage;
 
     public GameObject LightningChecker;
+    public GameObject AoETower;
     [SerializeField] private float LightningTime;
     public int i;
     private void Start()
     {
         LightDamage = FindObjectOfType<AoETowerScript>().damage;
         i = 0;
+        Destroy(this.gameObject, FindObjectOfType<AoETowerScript>().timeBetweenShots);
     }
     private void FixedUpdate()
     {
@@ -33,10 +35,7 @@ public class LightningBolt : MonoBehaviour
             }
             
         }
-        if (i >= FindObjectOfType<LightningCheck>().Hit_Enemies.Count)
-        {
-            FindObjectOfType<AoETowerScript>().ResetFire();
-        }
+        
 
 
         //this.transform.position += transform.right * LightSpeed * Time.deltaTime;
@@ -46,7 +45,6 @@ public class LightningBolt : MonoBehaviour
     {
         if (col.gameObject.tag == "Enemy")
         {
-            print("bruh");
             col.gameObject.GetComponent<Enemy>().TakeDamage(LightDamage);
 
         }
