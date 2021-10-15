@@ -8,30 +8,30 @@ public class SlowTowerScript : MonoBehaviour
     public float TankSlowEffect;
     private int Normalspeed;
     [SerializeField] List<GameObject> FoundEnemies = new List<GameObject>();
-    public void OnTriggerEnter2D(Collider2D collision)
+    public void OnTriggerEnter2D(Collider2D col)
     {
-        if (collision.tag == "Enemy")
+        if (col.tag == "Enemy")
         {
-            FoundEnemies.Add(collision.gameObject);
-            if (FoundEnemies.Contains(collision.gameObject))
+            FoundEnemies.Add(col.gameObject);
+            if (FoundEnemies.Contains(col.gameObject))
             {
-                if (collision.gameObject.GetComponent<Enemy>().isTopDown)
+                if (col.gameObject.GetComponent<Enemy>().isBoss)
                 {
-                    collision.gameObject.GetComponent<Enemy>().speed = TankSlowEffect;
+                    col.gameObject.GetComponent<Enemy>().speed = col.gameObject.GetComponent<Enemy>().bossslowspeed;
                 }
                 else
                 {
-                    collision.gameObject.GetComponent<Enemy>().speed = SlowEffect;
+                    col.gameObject.GetComponent<Enemy>().speed = col.gameObject.GetComponent<Enemy>().slowspeed;
                 }
-                
+
             }
-            
+
 
         }
     }
     public void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag =="Enemy")
+        if (collision.tag == "Enemy")
         {
             FoundEnemies.Remove(collision.gameObject);
             if (!FoundEnemies.Contains(collision.gameObject))
@@ -47,8 +47,4 @@ public class SlowTowerScript : MonoBehaviour
             }
         }
     }
-    private void Update()
-    {
-    }
-    
 }

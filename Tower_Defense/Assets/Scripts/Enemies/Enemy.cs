@@ -9,6 +9,9 @@ public class Enemy : MonoBehaviour
     public float speed;
     public float baseSpeed;
 
+    public float slowspeed;
+    public float bossslowspeed;
+
     [SerializeField] private float arrivalThreshold;
     [SerializeField] private float RotationSpeed;
     public float health;
@@ -19,9 +22,7 @@ public class Enemy : MonoBehaviour
     public bool isTopDown;
     public Slider Healthbar;
 
-
-
-    public bool isHit;
+    public bool isBoss;
 
 
 

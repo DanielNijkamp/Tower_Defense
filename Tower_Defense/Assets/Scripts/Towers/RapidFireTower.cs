@@ -24,8 +24,7 @@ public class RapidFireTower : MonoBehaviour
     {
         if (collision.tag == "Enemy")
         {
-            colliderobject = collision.gameObject;
-            RapidNearbyEnemies.Add(colliderobject);
+            RapidNearbyEnemies.Add(collision.gameObject);
             
         }
     }
@@ -33,8 +32,8 @@ public class RapidFireTower : MonoBehaviour
     {
         if (collision.tag == "Enemy")
         {
-            RapidNearbyEnemies.Remove(colliderobject);
-            if (RapidNearbyEnemies.Count == 0)
+            RapidNearbyEnemies.Remove(collision.gameObject);
+            if (this.RapidNearbyEnemies.Count == 0)
             {
                 currentTarget = null;
             }
@@ -43,7 +42,7 @@ public class RapidFireTower : MonoBehaviour
     private void Update()
     {
         updateNearestEnemy();
-        if (currentTarget != null && RapidNearbyEnemies.Count > 0)
+        if (currentTarget != null && this.RapidNearbyEnemies.Count > 0)
         {
             
             var offset = 0f;

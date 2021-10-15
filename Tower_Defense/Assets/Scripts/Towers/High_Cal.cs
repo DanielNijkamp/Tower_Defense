@@ -33,7 +33,7 @@ public class High_Cal : MonoBehaviour
         if (collision.tag == "Enemy")
         {
             High_Cal_NearbyEnemies.Remove(collision.gameObject);
-            if (High_Cal_NearbyEnemies.Count == 0)
+            if (this.High_Cal_NearbyEnemies.Count == 0)
             {
                 currentTarget = null;
             }
@@ -43,7 +43,7 @@ public class High_Cal : MonoBehaviour
     {
         
         updateNearestEnemy();
-        if (currentTarget != null && High_Cal_NearbyEnemies.Count > 0)
+        if (currentTarget != null && this.High_Cal_NearbyEnemies.Count > 0)
         {
 
             var offset = 0f;

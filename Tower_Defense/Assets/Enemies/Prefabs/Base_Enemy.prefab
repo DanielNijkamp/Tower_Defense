@@ -507,6 +507,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   baseSpeed: 1
+  slowspeed: 0.5
+  bossslowspeed: 0
   arrivalThreshold: 0.1
   RotationSpeed: 20
   health: 100
@@ -517,6 +519,7 @@ MonoBehaviour:
   isTopDown: 1
   Healthbar: {fileID: 2596602924055087721}
   isHit: 0
+  isBoss: 0
 --- !u!61 &951547273274614394
 BoxCollider2D:
   m_ObjectHideFlags: 0

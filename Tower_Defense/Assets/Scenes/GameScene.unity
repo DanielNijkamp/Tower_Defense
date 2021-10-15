@@ -3137,7 +3137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerHealth: 100
   PlayerWealth: 0
-  startingWealth: 3000
+  startingWealth: 10000
   EnemyDeathReward: 100
   EnemyHitReward: 15
   WaveCount: 0

@@ -4870,7 +4870,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SlowEffect: 0.5
-  TankSlowEffect: 0.1
   FoundEnemies: []
 --- !u!50 &4366332984416379679
 Rigidbody2D:
