@@ -12,6 +12,6 @@ Tower defense project
 
 ![Main_Menu](https://cdn.discordapp.com/attachments/854772935573897249/888006055555108874/unknown.png)
 ![Settings](https://cdn.discordapp.com/attachments/854772935573897249/888006190066462740/unknown.png)
-![Game View](https://media.discordapp.net/attachments/854772935573897249/897417728133058570/unknown.png?width=826&height=468)
+![Game View](https://cdn.discordapp.com/attachments/854772935573897249/898996925829898301/unknown.png)
 # License
 [MIT](https://cdn.discordapp.com/attachments/854772935573897249/885946058625151006/Trollface_non-free.png)
