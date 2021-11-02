@@ -113,11 +113,13 @@ public class WaveSystem : MonoBehaviour
     private void StartNewRound() 
     {
         WaveCount++;
-        FindObjectOfType<GameManager>().PlayerWealth += FindObjectOfType<GameManager>().WaveMoney;
+        FindObjectOfType<GameManager>().PlayerWealth += FindObjectOfType<GameManager>().WaveMoney;        
         isStartOfRound = false;
         isRoundGoing = true;
         isIntermission = false;
         print("started new round!");
+        Activate_Money_Towers();
+        Activate_Health_Towers();
         GetEnemies();
         
     }
@@ -179,6 +181,32 @@ public class WaveSystem : MonoBehaviour
                 isRoundGoing = false;
                 enemiesToSpawn.Clear();
                 hasSpawnedEnemies = false;
+            }
+
+        }
+    }
+    public void Activate_Money_Towers()
+    {
+        GameObject[] moneyTowers = GameObject.FindGameObjectsWithTag("Money_Tower");
+        foreach (GameObject money_tower in moneyTowers)
+        {
+            if (money_tower != null)
+            {
+                money_tower.GetComponent<MoneyTower>().AddWaveEndMoney();
+                
+            }
+            
+        }
+    }
+    public void Activate_Health_Towers()
+    {
+        GameObject[] healthTowers = GameObject.FindGameObjectsWithTag("Health_Tower");
+        foreach (GameObject health_tower in healthTowers)
+        {
+            if (health_tower != null)
+            {
+                health_tower.GetComponent<HealthTower>().AddHealth();
+
             }
 
         }

@@ -4685,7 +4685,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f0e669bb188ca7e43996c40270b0a3c9, type: 3}
   Slow_Tower: []
   Health_Tower: []
-  Money_Tower: []
+  Money_Tower:
+  - {fileID: 8300000, guid: 78a87fa179e57854e9fc73d568592ea1, type: 3}
+  - {fileID: 8300000, guid: 1cd552e67d711e04eb3a7fdac77a3e4a, type: 3}
+  - {fileID: 8300000, guid: c7537e421d5e7104baef0bb37b3b2691, type: 3}
+  - {fileID: 8300000, guid: 2e317909f15d63d4cb348998f66af4aa, type: 3}
   BGMVolume: 0
   SFXVolume: 0
   GameStarted: 0
