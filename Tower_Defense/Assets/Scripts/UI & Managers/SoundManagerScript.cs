@@ -17,6 +17,7 @@ public class SoundManagerScript : MonoBehaviour
 
     public AudioClip [] RapidFire_Tower;
     public AudioClip [] High_Cal_Tower;
+    public AudioClip [] Acid_Tower;
     public AudioClip [] AoE_Tower;
     public AudioClip [] Slow_Tower;
     public AudioClip [] Health_Tower;
@@ -29,8 +30,10 @@ public class SoundManagerScript : MonoBehaviour
 
     public AudioSource sfxSource;
     public AudioSource bgmSource;
-    public AudioSource rapidTowerSource;
-    public AudioSource highcalTowerSource;
+    public AudioSource RapidTowerSource;
+    public AudioSource HighcalTowerSource;
+    public AudioSource AoESource;
+    public AudioSource Acid_Source;
 
     public Button StartButton;
 
@@ -75,7 +78,7 @@ public class SoundManagerScript : MonoBehaviour
             AudioClip audioClip = BGM[Random.Range(0, BGM.Length)];
             bgmSource.clip = audioClip;
             bgmSource.volume = BGMVolume;
-            bgmSource.PlayOneShot(bgmSource.clip);
+            bgmSource.Play(0);
             yield return new WaitForSecondsRealtime(audioClip.length);
         }
     }
@@ -128,18 +131,34 @@ public class SoundManagerScript : MonoBehaviour
     public void PlayRapidFireShot()
     {
         AudioClip audioClip = RapidFire_Tower[0];
-        rapidTowerSource.clip = audioClip;
-        rapidTowerSource.volume = SFXVolume;
-        rapidTowerSource.pitch = (Random.Range(0.6f, 1.2f));
-        rapidTowerSource.PlayOneShot(rapidTowerSource.clip);
+        RapidTowerSource.clip = audioClip;
+        RapidTowerSource.volume = SFXVolume;
+        RapidTowerSource.pitch = (Random.Range(0.6f, 1.2f));
+        RapidTowerSource.PlayOneShot(RapidTowerSource.clip);
     }
     public void PlayHC_Shot()
     {
         AudioClip audioClip = High_Cal_Tower[0];
-        highcalTowerSource.clip = audioClip;
-        highcalTowerSource.volume = SFXVolume;
-        highcalTowerSource.pitch = (Random.Range(0.6f, 1f));
-        highcalTowerSource.PlayOneShot(highcalTowerSource.clip);
+        HighcalTowerSource.clip = audioClip;
+        HighcalTowerSource.volume = SFXVolume;
+        HighcalTowerSource.pitch = (Random.Range(0.6f, 1f));
+        HighcalTowerSource.PlayOneShot(HighcalTowerSource.clip);
+    }
+    public void Play_AoE_Shot()
+    {
+        AudioClip audioClip = AoE_Tower[Random.Range(0,1)];
+        AoESource.clip = audioClip;
+        AoESource.volume = SFXVolume;
+        AoESource.pitch = (Random.Range(0.6f, 1.2f));
+        AoESource.PlayOneShot(AoESource.clip);
+    }
+    public void Play_Acid_Shot()
+    {
+        AudioClip audioClip = Acid_Tower[Random.Range(0, 1)];
+        Acid_Source.clip = audioClip;
+        Acid_Source.volume = SFXVolume;
+        Acid_Source.pitch = (Random.Range(0.6f, 1.2f));
+        Acid_Source.PlayOneShot(Acid_Source.clip);
     }
 
 

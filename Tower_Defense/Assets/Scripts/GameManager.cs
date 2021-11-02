@@ -16,13 +16,14 @@ public class GameManager : MonoBehaviour
     public int startingWealth = 300;
     public int EnemyDeathReward = 75;
     public int EnemyHitReward = 15;
+    public int WaveMoney = 100;
 
-    public int WaveCount;
 
     public bool IsPaused;
-
+    private bool HasDied;
 
     public TextMeshProUGUI WealthText;
+    public TextMeshProUGUI HealthText;
     public Toggle speedToggle;
 
     public Toggle SettingsToggle;
@@ -43,13 +44,12 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        HealthText.text = PlayerHealth + " ";
         speedToggle.isOn = false;
         IsPaused = false;
         PlayerWealth = startingWealth;
         Physics2D.IgnoreLayerCollision(6, 8, true);
-
-
-
+        FindObjectOfType<LevelLoader>().Transition.SetTrigger("Remove_Transition");
     }
     private void Update()
     {
@@ -88,16 +88,28 @@ public class GameManager : MonoBehaviour
 
     public void GoToMainmenu()
     {
-        StartCoroutine(LoadMainMenu());
+        if (!isCoolDown)
+        {
+            StartCoroutine(LoadMainMenu());
+            StartCoroutine(CoolDown());
+        }
     }
     IEnumerator LoadMainMenu()
     {
+        
         Time.timeScale = 1f;
         //stop music and play transition
         FindObjectOfType<SoundManagerScript>().StopMusic();
         FindObjectOfType<LevelLoader>().Transition.SetTrigger("Add_Transition");
         yield return new WaitForSeconds(0.5f);
-        FindObjectOfType<LevelLoader>().Transition.SetTrigger("Start");
+        if (HasDied == true)
+        {
+            FindObjectOfType<LevelLoader>().Transition.SetTrigger("Start");
+        }
+        else
+        {
+            FindObjectOfType<LevelLoader>().Transition.SetTrigger("End");
+        }
         FindObjectOfType<SoundManagerScript>().PlayTransitionSFX();
 
         //start main menu music and canvas
@@ -106,6 +118,7 @@ public class GameManager : MonoBehaviour
         AsyncOperation operation = SceneManager.LoadSceneAsync("MainMenu");
         StartCoroutine(FindObjectOfType<SoundManagerScript>().StartMainMenuMusic());
         FindObjectOfType<LevelLoader>().Transition.SetTrigger("End");
+        HasDied = false;
         
 
     }
@@ -130,12 +143,13 @@ public class GameManager : MonoBehaviour
         GameOverSelect.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         Time.timeScale = 0;
+        HasDied = true;
     }
     public void ChangeSpeed()
     {
         if (speedToggle.isOn == true)
         {
-            Time.timeScale = 3f;
+            Time.timeScale = 2f;
         }
         else
         {

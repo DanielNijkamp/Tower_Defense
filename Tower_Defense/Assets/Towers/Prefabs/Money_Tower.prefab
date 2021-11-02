@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3683917390506975695}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.198, y: -0.019, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8460569925680794016}
@@ -45,9 +45,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.95
+  m_FalloffIntensity: 0.546
   m_Color: {r: 1, g: 0.60828614, b: 0, a: 1}
-  m_Intensity: 1.33
+  m_Intensity: 0.91
   m_LightVolumeOpacity: 1
   m_ApplyToSortingLayers: 00000000
   m_LightCookieSprite: {fileID: 0}
@@ -58,8 +58,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensity: 0
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0.12
-  m_PointLightOuterRadius: 0.5
+  m_PointLightInnerRadius: 0.25
+  m_PointLightOuterRadius: 0.7
   m_PointLightDistance: 3
   m_PointLightQuality: 1
   m_ShapeLightParametricSides: 5
@@ -97,8 +97,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8460569923780628365}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.197, y: -0.0253, z: 0}
-  m_LocalScale: {x: 0.065, y: 0.065, z: 0.1}
+  m_LocalPosition: {x: 0.0058, y: -0.003, z: 0}
+  m_LocalScale: {x: 0.11, y: 0.12, z: 1}
   m_Children: []
   m_Father: {fileID: 8460569925680794016}
   m_RootOrder: 2
@@ -225,7 +225,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 21300000, guid: 86d9a301c48331846b0c1bb7e2e0c4d7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6364b3914c5fcb9458a020da22b3846d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -260,7 +260,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8460569925680794017}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.1484847, y: -3.2900093, z: 34.557774}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4809553617812451977}

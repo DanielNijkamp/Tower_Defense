@@ -105,12 +105,12 @@ MonoBehaviour:
   RotationSpeed: 30
   health: 50
   DamageToPlayer: 25
-  path: {fileID: 0}
+  DamageMoney: 15
   currentWaypoint: {fileID: 0}
+  path: {fileID: 0}
   HealthText: {fileID: 0}
   isTopDown: 1
   Healthbar: {fileID: 1050392725742630610}
-  isHit: 0
   isBoss: 0
 --- !u!61 &9057900084215775521
 BoxCollider2D:
@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 2471927942218398154}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -485,7 +485,7 @@ GameObject:
   - component: {fileID: 5410562618847861855}
   m_Layer: 0
   m_Name: Fast_Enemy
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

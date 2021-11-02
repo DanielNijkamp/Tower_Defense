@@ -182,7 +182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2a3a966ef4f4334cb992f56af26c099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 20
+  damage: 10
   timeBetweenShots: 2
   nextTarget: {fileID: 0}
   AoE_Nearby: []

@@ -14,21 +14,26 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private float arrivalThreshold;
     [SerializeField] private float RotationSpeed;
+
     public float health;
     public int DamageToPlayer;
-    public Path path;
+    public int DamageMoney;
+    
     public Waypoint currentWaypoint;
+    public Path path;
     public TextMeshProUGUI HealthText;
     public bool isTopDown;
+    private bool IsAtEnd;
     public Slider Healthbar;
-
+    
+    
     public bool isBoss;
 
 
 
     private void Start()
     {
-        
+        IsAtEnd = false;
         HealthText = GameObject.Find("HealthTextObject").GetComponent<TextMeshProUGUI>();
         HealthText.text = FindObjectOfType<GameManager>().PlayerHealth + " ";
         SetupPath();
@@ -74,6 +79,10 @@ public class Enemy : MonoBehaviour
     }
     void Die()
     {
+        if (IsAtEnd == false)
+        {
+            FindObjectOfType<GameManager>().PlayerWealth += DamageMoney;
+        }
         if (isTopDown)
         {
             Destroy(transform.parent.gameObject);
@@ -87,6 +96,7 @@ public class Enemy : MonoBehaviour
     }
     void PathComplete(int value)
     {
+        this.IsAtEnd = true;
         Die();
         int newHealth = FindObjectOfType<GameManager>().PlayerHealth -= value;
         HealthText.text = newHealth + " ";
@@ -99,7 +109,7 @@ public class Enemy : MonoBehaviour
     }
     public void TakeDamage(float amount)
     {
-        health -= amount;
+        health -= amount;;
     }
     private void Awake()
     {

@@ -96,7 +96,7 @@ public class AoETowerScript : MonoBehaviour
     }
     IEnumerator Shoot()
     {
-        
+        FindObjectOfType<SoundManagerScript>().Play_AoE_Shot();
         lightningChecker = Instantiate(lightningcheckprefab);
         lightningChecker.transform.position = currentTarget.transform.position;
         lightningBolt = Instantiate(lightningboltprefab);

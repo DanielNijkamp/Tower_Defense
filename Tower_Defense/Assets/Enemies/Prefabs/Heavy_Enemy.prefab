@@ -105,12 +105,12 @@ MonoBehaviour:
   RotationSpeed: 0
   health: 150
   DamageToPlayer: 75
-  path: {fileID: 0}
+  DamageMoney: 50
   currentWaypoint: {fileID: 0}
+  path: {fileID: 0}
   HealthText: {fileID: 0}
   isTopDown: 1
   Healthbar: {fileID: 2154010379756214512}
-  isHit: 0
   isBoss: 0
 --- !u!58 &9217077903421908476
 CircleCollider2D:
@@ -447,7 +447,7 @@ GameObject:
   - component: {fileID: 7671996127651870644}
   m_Layer: 0
   m_Name: Heavy_Enemy
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -557,7 +557,7 @@ GameObject:
   - component: {fileID: 2341947771488295345}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

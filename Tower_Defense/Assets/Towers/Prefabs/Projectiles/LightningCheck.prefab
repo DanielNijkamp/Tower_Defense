@@ -62,4 +62,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AoE_TowerReference: {fileID: 4989540753002856290, guid: 06cfbd3002bb4154eb7b94aed8e7771a, type: 3}
   lightningBolt: {fileID: 1083001920108521454, guid: a6c631fa9aaa8b14d91893794cbda41b, type: 3}
+  layer:
+    serializedVersion: 2
+    m_Bits: 512
   Hit_Enemies: []

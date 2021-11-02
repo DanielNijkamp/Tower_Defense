@@ -63,7 +63,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Acid_Pool_Effect: {fileID: 8276967995683239910}
   Acid_Tick: 0
+  Tick: 0.75
   Iscooldown: 0
+  layer:
+    serializedVersion: 2
+    m_Bits: 512
+  Hit_Enemies: []
 --- !u!1 &2022496980532565455
 GameObject:
   m_ObjectHideFlags: 0

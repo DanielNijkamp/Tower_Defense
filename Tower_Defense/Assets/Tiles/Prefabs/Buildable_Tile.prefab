@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1000
+  m_text: 1700
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f6fd152e6ceda3f449bf39527d4a0be4, type: 2}
   m_sharedMaterial: {fileID: 4937272137259187438, guid: f6fd152e6ceda3f449bf39527d4a0be4, type: 2}
@@ -638,7 +638,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1200
+  m_text: 2000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f6fd152e6ceda3f449bf39527d4a0be4, type: 2}
   m_sharedMaterial: {fileID: 4937272137259187438, guid: f6fd152e6ceda3f449bf39527d4a0be4, type: 2}
@@ -1554,10 +1554,10 @@ MonoBehaviour:
   RapidFireCost: 100
   AoE_Cost: 500
   SlowCost: 300
-  MoneyCost: 800
-  HealthCost: 1000
+  MoneyCost: 1300
+  HealthCost: 1700
   HighCalCost: 1000
-  AcidCost: 1200
+  AcidCost: 2000
   RapidFireTower: {fileID: 4423597134043558120, guid: 180e2ae97be5c304e9a8854d044b4815, type: 3}
   AoE_Tower: {fileID: 4989540753002856290, guid: 06cfbd3002bb4154eb7b94aed8e7771a, type: 3}
   SlowTower: {fileID: 7066177463607670479, guid: 1a5218a3e0ab3044fa59e3dd2c49b1d3, type: 3}
@@ -3027,7 +3027,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 800
+  m_text: 1300
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f6fd152e6ceda3f449bf39527d4a0be4, type: 2}
   m_sharedMaterial: {fileID: 4937272137259187438, guid: f6fd152e6ceda3f449bf39527d4a0be4, type: 2}

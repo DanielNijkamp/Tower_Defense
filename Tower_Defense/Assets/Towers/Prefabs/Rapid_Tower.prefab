@@ -369,7 +369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9131b0458633c4498c79bd2cf82de26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2.3
+  damage: 3
   timeBetweenShots: 0.1
   BarrelAnimation: {fileID: 473544555750420450}
   GunBarrels:

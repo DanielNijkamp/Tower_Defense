@@ -16,6 +16,7 @@ public class MainMenuScript : MonoBehaviour
     public VideoClip TrolClip;
     float myFloat;
     public Animator Transition;
+    private bool isCoolDown;
 
     private bool IsTrolling = false;
     //Loading screen wip
@@ -25,6 +26,12 @@ public class MainMenuScript : MonoBehaviour
     //public TextMeshProUGUI ProgressText;
 
     //public GameObject MainMenuBackButton;
+    IEnumerator CoolDown()
+    {
+        isCoolDown = true;
+        yield return new WaitForSecondsRealtime(1f);
+        isCoolDown = false;
+    }
     public void Start()
     {
         myFloat = (float)TrolClip.length;
@@ -32,7 +39,12 @@ public class MainMenuScript : MonoBehaviour
     }
     public void StartNewScene()
     {
-        FindObjectOfType<LevelLoader>().LoadNextLevel();
+        if (!isCoolDown)
+        {
+            FindObjectOfType<LevelLoader>().LoadNextLevel();
+            StartCoroutine(CoolDown());
+        }
+       
     }
     public void QuitGame()
     {
@@ -40,13 +52,21 @@ public class MainMenuScript : MonoBehaviour
     }
     public void OpenSettings()
     {
-        StartCoroutine(OpenSettingsTransition());
-        FindObjectOfType<SoundManagerScript>().PlayTransitionSFX();
+        if (!isCoolDown)
+        {
+            StartCoroutine(OpenSettingsTransition());
+            FindObjectOfType<SoundManagerScript>().PlayTransitionSFX();
+            StartCoroutine(CoolDown());
+        }
     }
     public void CloseSettings()
     {
-        StartCoroutine(CloseSettingsTransition());
-        FindObjectOfType<SoundManagerScript>().PlayTransitionSFX();
+        if (!isCoolDown)
+        {
+            StartCoroutine(CloseSettingsTransition());
+            FindObjectOfType<SoundManagerScript>().PlayTransitionSFX();
+            StartCoroutine(CoolDown());
+        }
     }
     IEnumerator OpenSettingsTransition()
     {
@@ -65,8 +85,6 @@ public class MainMenuScript : MonoBehaviour
         SettingsCanvas.SetActive(false);
         Transition.SetTrigger("End");
     }
-
-
 
     
     public void TrolPlayer()

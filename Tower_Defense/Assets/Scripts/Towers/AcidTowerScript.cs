@@ -88,10 +88,9 @@ public class AcidTowerScript : MonoBehaviour
        
 
     }
-    
     IEnumerator Shoot()
     {
-        
+        FindObjectOfType<SoundManagerScript>().Play_Acid_Shot();
         Acid_Pool = Instantiate(Acid_Pool_Prefab);
         Acid_Pool.transform.position = currentTarget.transform.position;
         hasShot = true;

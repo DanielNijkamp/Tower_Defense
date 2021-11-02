@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 7648228061011213638}
   m_Layer: 0
   m_Name: Point Light 2D
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 4453493005434408698}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -513,12 +513,12 @@ MonoBehaviour:
   RotationSpeed: 20
   health: 100
   DamageToPlayer: 50
-  path: {fileID: 0}
+  DamageMoney: 25
   currentWaypoint: {fileID: 0}
+  path: {fileID: 0}
   HealthText: {fileID: 0}
   isTopDown: 1
   Healthbar: {fileID: 2596602924055087721}
-  isHit: 0
   isBoss: 0
 --- !u!61 &951547273274614394
 BoxCollider2D:
@@ -557,7 +557,7 @@ GameObject:
   - component: {fileID: 8063400114636370056}
   m_Layer: 0
   m_Name: Base_Enemy
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

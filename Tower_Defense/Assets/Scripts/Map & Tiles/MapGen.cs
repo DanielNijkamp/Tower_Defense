@@ -12,6 +12,8 @@ public class MapGen : MonoBehaviour
     public GameObject StartTile;
     public GameObject EndTile;
 
+    public GameObject InstantiatedStartingTile;
+
     //public LayerMask _layer;
 
     [SerializeField] private float yOffset;
@@ -33,7 +35,8 @@ public class MapGen : MonoBehaviour
     private void Start()
     {
         GenerateMap();
-    }
+        
+}
     void GenerateMap()
     {
         for (int y = 0; y < TileMap.GetLength(1); y++)
@@ -65,6 +68,7 @@ public class MapGen : MonoBehaviour
                     GameObject newTile = Instantiate(StartTile);
                     newTile.transform.position = new Vector2(y - yOffset, x - xOffset);
                     newTile.transform.parent = MapGenObject.transform;
+                    InstantiatedStartingTile = newTile;
                 }
                 else if (TileMap[x, y] == 5)
                 {

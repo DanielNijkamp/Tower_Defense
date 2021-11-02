@@ -11,6 +11,7 @@ public class LightningCheck : MonoBehaviour
 
     public GameObject AoE_TowerReference;
     public GameObject lightningBolt;
+    public LayerMask layer;
 
     public List<GameObject> Hit_Enemies = new List<GameObject>();
 
@@ -21,18 +22,21 @@ public class LightningCheck : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(transform.position, AoE_TowerReference.GetComponent<AoETowerScript>().radius);
+        
+        Collider2D[] enemiesInRange = Physics2D.OverlapCircleAll(transform.position, AoE_TowerReference.GetComponent<AoETowerScript>().radius, layer);
         foreach (Collider2D anEnemy in enemiesInRange)
         {
             if (anEnemy.CompareTag("Enemy") && !this.Hit_Enemies.Contains(anEnemy.gameObject) && this.Hit_Enemies.Count <= _maxchaincount)
             {
                 this.Hit_Enemies.Add(anEnemy.gameObject);
-                
             }
             
         }
     }
-    
+    private void Update()
+    {
+        layer = ~layer;
+    }
 
 
 
