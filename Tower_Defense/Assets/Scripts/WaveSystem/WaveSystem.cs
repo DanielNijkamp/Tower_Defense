@@ -31,18 +31,53 @@ public class WaveSystem : MonoBehaviour
     public GameObject[] enemies;
     public List<GameObject> enemiesToSpawn;
 
+    
 
     int[,] Waves = {
         {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},// ignore
-        {1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0},
-        {2,2,2,1,1,1,2,2,2,0,0,0,0,0,0,0},
-        {3,1,3,1,0,0,0,0,0,0,0,0,0,0,0,0},
-        {1,1,1,1,1,1,1,1,1,1,2,2,3,3,3,4},
-        {0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0},
-        {1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0},
-        {0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0},
-        {1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0},
-        {0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0}
+        {1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0},// 1
+        {1,2,1,0,1,2,1,0,0,0,0,0,0,0,0,0},// 2
+        {3,1,3,1,0,0,0,0,0,0,0,0,0,0,0,0},// 3
+        {1,2,2,1,2,2,1,2,2,0,0,0,0,0,0,0},// 4
+        {3,1,3,3,3,0,0,0,0,0,0,0,0,0,0,0},// 5
+        {2,2,2,2,2,2,1,1,1,1,0,0,0,0,0,0},// 6
+        {1,1,1,1,3,0,0,0,0,0,0,0,0,0,0,0},// 7
+        {1,2,1,2,3,2,3,1,2,3,0,0,0,0,0,0},// 8
+        {2,1,1,1,1,0,0,0,1,1,0,0,0,3,3,3},// 9
+        {3,3,2,2,1,1,1,3,3,0,0,0,0,1,3,3},// 10
+
+        {2,1,2,1,3,2,1,0,0,0,0,0,0,0,0,0},// 11
+        {3,3,3,3,3,3,3,3,0,0,0,0,0,0,0,0},// 12
+        {2,1,2,1,2,1,2,1,2,1,0,0,0,0,0,0},// 13
+        {1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0},// 14
+        {0,3,0,3,0,3,0,0,0,0,0,0,3,3,3,3},// 15
+        {0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0},// 16
+        {0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0},// 17
+        {2,2,2,1,1,1,1,1,0,0,0,0,0,0,0,0},// 18
+        {2,1,2,1,2,2,2,2,2,2,2,2,2,2,2,2},// 19
+        {1,1,1,1,1,1,1,1,1,3,3,3,3,3,3,4},// 20
+
+        {2,1,2,1,3,2,1,0,0,0,0,0,0,0,0,0},// 21
+        {0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0},// 22
+        {2,1,3,1,3,2,1,3,0,0,3,3,3,0,0,0},// 23
+        {2,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0},// 24
+        {2,1,1,3,1,3,3,3,0,0,0,0,0,0,0,0},// 25
+        {1,2,2,2,2,2,2,3,0,0,0,0,0,0,0,0},// 26
+        {1,2,1,1,3,2,3,2,0,0,0,0,0,0,0,0},// 27
+        {1,1,3,3,3,3,2,2,3,1,2,1,1,2,1,3},// 28
+        {3,3,3,3,2,3,2,3,1,1,1,1,1,1,1,1},// 29
+        {3,1,2,1,2,2,2,2,2,2,2,3,3,4,4,4},// 30
+
+        {2,1,1,3,1,3,3,3,0,0,0,0,0,0,0,0},// 31
+        {0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0},// 32
+        {3,1,3,1,3,3,0,0,0,0,0,0,0,0,0,0},// 33
+        {2,1,3,1,4,2,2,2,3,1,1,2,3,0,0,0},// 34
+        {0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0},// 35
+        {0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0},// 36
+        {0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0},// 37
+        {0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0},// 38
+        {0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0},// 39
+        {4,4,4,4,4,4,4,3,3,3,3,3,2,2,4,4},// 40
     };
     IEnumerator SpawnEnemies()
     {
@@ -80,7 +115,10 @@ public class WaveSystem : MonoBehaviour
         timer = Time.time + timeBeforeRoundStarts;
         timerIsRunning = true;
 
-        
+        if (WaveCount == 40)
+        {
+            print("bruh momento");
+        }
     }
     
     private void GetEnemies()
@@ -117,19 +155,21 @@ public class WaveSystem : MonoBehaviour
         isStartOfRound = false;
         isRoundGoing = true;
         isIntermission = false;
-        print("started new round!");
         Activate_Money_Towers();
         Activate_Health_Towers();
         GetEnemies();
         
     }
-    private void StartIntermission()
-    {
-        timer = Time.time + intermissionTime;
-        isRoundGoing = false;
-        isIntermission = true;
+    
+    
+    
         
-
+    
+    IEnumerator StartIntermission()
+    {
+        isRoundGoing = false;
+        yield return new WaitForSeconds(intermissionTime);
+        isIntermission = true;
     }
 
 
@@ -143,7 +183,6 @@ public class WaveSystem : MonoBehaviour
             timer -= Time.deltaTime;
             if (isStartOfRound)
             {
-                
                 if (Time.time > timeBeforeRoundStarts)
                 {
 
@@ -151,15 +190,13 @@ public class WaveSystem : MonoBehaviour
                     timerIsRunning = false;
                 }
             }
-            
             if (isIntermission)
             {
-                if (Time.time > intermissionTime)
-                {
-                    StartNewRound();
-                    timerIsRunning = false;
-                }
+                StartNewRound();
+                timerIsRunning = false;
             }
+            
+            
             
 
         }
@@ -175,8 +212,7 @@ public class WaveSystem : MonoBehaviour
             if (hasSpawnedEnemies && enemies.Length == 0)
             {
                 
-                
-                StartIntermission();
+                StartCoroutine(StartIntermission());
                 timerIsRunning = true;
                 isRoundGoing = false;
                 enemiesToSpawn.Clear();

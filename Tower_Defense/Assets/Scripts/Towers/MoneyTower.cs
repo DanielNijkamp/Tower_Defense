@@ -13,11 +13,12 @@ public class MoneyTower : MonoBehaviour
     public void AddWaveEndMoney()
     {
         FindObjectOfType<GameManager>().PlayerWealth += 100;
-        Debug.Log("got money from money tower");
+        FindObjectOfType<SoundManagerScript>().Play_Money_Sound(1, 2);
     }
     void AddWaveMoney()
     {
         FindObjectOfType<GameManager>().PlayerWealth += Random.Range(5,35);
+        
     }
      
 }

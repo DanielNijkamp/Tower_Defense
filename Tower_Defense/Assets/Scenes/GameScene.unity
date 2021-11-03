@@ -1746,7 +1746,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waveText: {fileID: 1071149334}
-  intermissionTime: 5
+  intermissionTime: 2
   timeBeforeRoundStarts: 10
   timerIsRunning: 0
   timer: 0

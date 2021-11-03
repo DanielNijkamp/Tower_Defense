@@ -8,8 +8,13 @@ public class SlowTowerScript : MonoBehaviour
     public float TankSlowEffect;
     private int Normalspeed;
     [SerializeField] List<GameObject> FoundEnemies = new List<GameObject>();
+    private void Start()
+    {
+        FindObjectOfType<SoundManagerScript>().Play_Slow_Sound(0);
+    }
     public void OnTriggerEnter2D(Collider2D col)
     {
+        
         if (col.tag == "Enemy")
         {
             FoundEnemies.Add(col.gameObject);
@@ -31,6 +36,7 @@ public class SlowTowerScript : MonoBehaviour
     }
     public void OnTriggerExit2D(Collider2D collision)
     {
+        
         if (collision.tag == "Enemy")
         {
             FoundEnemies.Remove(collision.gameObject);

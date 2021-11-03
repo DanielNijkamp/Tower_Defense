@@ -10,5 +10,6 @@ public class HealthTower : MonoBehaviour
     public void AddHealth()
     {
         FindObjectOfType<GameManager>().PlayerHealth += healthToAdd;
+        FindObjectOfType<SoundManagerScript>().Play_Health_Sound();
     }
 }

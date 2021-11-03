@@ -34,6 +34,9 @@ public class SoundManagerScript : MonoBehaviour
     public AudioSource HighcalTowerSource;
     public AudioSource AoESource;
     public AudioSource Acid_Source;
+    public AudioSource Money_Source;
+    public AudioSource Health_Source;
+    public AudioSource Slow_Source;
 
     public Button StartButton;
 
@@ -159,6 +162,30 @@ public class SoundManagerScript : MonoBehaviour
         Acid_Source.volume = SFXVolume;
         Acid_Source.pitch = (Random.Range(0.6f, 1.2f));
         Acid_Source.PlayOneShot(Acid_Source.clip);
+    }
+    public void Play_Money_Sound(int begin, int end)
+    {
+        AudioClip audioClip = Money_Tower[Random.Range(begin,end)];
+        Money_Source.clip = audioClip;
+        Money_Source.volume = SFXVolume;
+        Money_Source.pitch = (Random.Range(0.6f, 1.2f));
+        Money_Source.PlayOneShot(Money_Source.clip);
+    }
+    public void Play_Health_Sound()
+    {
+        AudioClip audioClip = Health_Tower[Random.Range(0, Health_Tower.Length)];
+        Health_Source.clip = audioClip;
+        Health_Source.volume = SFXVolume;
+        Health_Source.pitch = (Random.Range(0.6f, 1.2f));
+        Health_Source.PlayOneShot(Health_Source.clip);
+    }
+    public void Play_Slow_Sound(int soundclip)
+    {
+        AudioClip audioClip = Slow_Tower[soundclip];
+        Slow_Source.clip = audioClip;
+        Slow_Source.volume = SFXVolume;
+        Slow_Source.pitch = (Random.Range(0.6f, 1.2f));
+        Slow_Source.PlayOneShot(Slow_Source.clip);
     }
 
 
