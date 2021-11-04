@@ -160,6 +160,7 @@ MonoBehaviour:
   bossslowspeed: 0.1
   arrivalThreshold: 0.1
   RotationSpeed: 1.5
+  StartingHealth: 10000
   health: 10000
   DamageToPlayer: 500
   DamageMoney: 1000

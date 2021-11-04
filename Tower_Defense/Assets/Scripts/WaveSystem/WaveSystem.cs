@@ -19,9 +19,10 @@ public class WaveSystem : MonoBehaviour
     public bool isIntermission;
     public bool isStartOfRound;
 
-    //
+    
     public int MaxEnemyCount;
     public bool hasSpawnedEnemies;
+    public bool hasWonGame;
 
     public float EnemySpawnTime;
     public int WaveCount;
@@ -31,8 +32,8 @@ public class WaveSystem : MonoBehaviour
     public GameObject[] enemies;
     public List<GameObject> enemiesToSpawn;
 
-    
-
+   
+   
     int[,] Waves = {
         {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},// ignore
         {1,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0},// 1
@@ -78,30 +79,69 @@ public class WaveSystem : MonoBehaviour
         {0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0},// 38
         {0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0},// 39
         {4,4,4,4,4,4,4,3,3,3,3,3,2,2,4,4},// 40
+        {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0},// 41
     };
     IEnumerator SpawnEnemies()
     {
-        int i = 0;
         foreach (GameObject enemy in enemiesToSpawn)
         {
-            
             if (enemy != null)
             {
                 GameObject newEnemy = Instantiate(enemy, FindObjectOfType<MapGen>().InstantiatedStartingTile.transform.position, Quaternion.identity);
-                yield return new WaitForSeconds(EnemySpawnTime);
-                i++;
+                Calculate_Enemy_Health(newEnemy);
+                if (newEnemy.GetComponentInChildren<Enemy>() != null)
+                {
+                    if (newEnemy.GetComponentInChildren<Enemy>().isBoss)
+                    {
+                        yield return new WaitForSeconds(EnemySpawnTime + 0.5f);
+                    }
+                    else
+                    {
+                        yield return new WaitForSeconds(EnemySpawnTime);
+                    }
+                }
+                else
+                {
+                    yield return new WaitForSeconds(EnemySpawnTime);
+                }
+                
             }
             else
             {
-                yield return new WaitForSeconds(EnemySpawnTime-25);
-                i++;
+                yield return new WaitForSeconds(EnemySpawnTime - 25);
             }
             
-            
-            
         }
+
         hasSpawnedEnemies = true;
         yield break;
+    }
+    /*
+     
+     */
+    public void Calculate_Enemy_Health(GameObject enemy)
+    {
+        for (int i = 2; i < WaveCount; i++)
+        {
+            if (enemy != null)
+            {
+                if (!enemy.GetComponentInChildren<Enemy>().isBoss)
+                {
+                    if (i >= 10)
+                    {
+
+                        enemy.GetComponentInChildren<Enemy>().health *= 1.1f;
+                        
+                    }
+                    else
+                    {
+                        enemy.GetComponentInChildren<Enemy>().health += 10 * i;
+                        
+                    }
+                }
+            }
+
+        }
     }
     private void Start()
     {
@@ -115,10 +155,7 @@ public class WaveSystem : MonoBehaviour
         timer = Time.time + timeBeforeRoundStarts;
         timerIsRunning = true;
 
-        if (WaveCount == 40)
-        {
-            print("bruh momento");
-        }
+        
     }
     
     private void GetEnemies()
@@ -159,12 +196,9 @@ public class WaveSystem : MonoBehaviour
         Activate_Health_Towers();
         GetEnemies();
         
-    }
-    
-    
-    
         
-    
+    }
+
     IEnumerator StartIntermission()
     {
         isRoundGoing = false;
@@ -200,7 +234,15 @@ public class WaveSystem : MonoBehaviour
             
 
         }
-       
+        if (WaveCount == maxWaveCount)
+        {
+            if (!hasWonGame)
+            {
+                hasWonGame = true;
+                FindObjectOfType<GameManager>().WinGame();
+            }
+            
+        }
 
 
     }
@@ -247,20 +289,4 @@ public class WaveSystem : MonoBehaviour
 
         }
     }
-
-
-
-
-
-
-    /*for (int i = 0; i < WaveCount; i++)
-        {
-            if (enemies.Length <= MaxEnemyCount)
-            {
-                GameObject newEnemy = Instantiate(EnemyPrefabs[Random.Range(0, EnemyPrefabs.Length - 1)], FindObjectOfType<MapGen>().InstantiatedStartingTile.transform.position, Quaternion.identity);
-                yield return new WaitForSeconds(1.25f);
-            }
-        }*/
-
-
 }

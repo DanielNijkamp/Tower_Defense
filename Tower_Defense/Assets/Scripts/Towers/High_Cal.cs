@@ -82,7 +82,7 @@ public class High_Cal : MonoBehaviour
     }
     IEnumerator Shoot()
     {
-        yield return new WaitForSecondsRealtime(0.1f);
+        yield return new WaitForSecondsRealtime(0.4f);
         FindObjectOfType<SoundManagerScript>().PlayHC_Shot();
         GameObject newBullet = Instantiate(bullet);
         newBullet.GetComponent<BulletScript>().bulletdamage = damage;

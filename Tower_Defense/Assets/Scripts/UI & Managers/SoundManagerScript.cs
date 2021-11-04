@@ -89,7 +89,18 @@ public class SoundManagerScript : MonoBehaviour
     {
         while (true)
         {
-            AudioClip audioClip = GameOverMusic[Random.Range(0, GameOverMusic.Length)];
+            AudioClip audioClip = GameOverMusic[0];
+            bgmSource.clip = audioClip;
+            bgmSource.volume = BGMVolume;
+            bgmSource.PlayOneShot(bgmSource.clip);
+            yield return new WaitForSecondsRealtime(audioClip.length);
+        }
+    }
+    public IEnumerator StartWinMusic()
+    {
+        while (true)
+        {
+            AudioClip audioClip = GameOverMusic[1];
             bgmSource.clip = audioClip;
             bgmSource.volume = BGMVolume;
             bgmSource.PlayOneShot(bgmSource.clip);

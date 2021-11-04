@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour
 
 
     public bool IsPaused;
-    private bool HasDied;
 
     public TextMeshProUGUI WealthText;
     public TextMeshProUGUI HealthText;
@@ -30,12 +29,15 @@ public class GameManager : MonoBehaviour
 
     public GameObject GameOverCanvas;
     public GameObject GameOverSelect;
+
+    public GameObject WinCanvas;
+    public GameObject AfterWinCanvas;
+
     public GameObject PauseTransitionCanvas;
     public GameObject PauseUI;
 
     public GameObject clickmanager;
 
-    public Animator gameoverTransition;
     public Animator PauseTransition;
 
     public bool isCoolDown = false;
@@ -74,7 +76,10 @@ public class GameManager : MonoBehaviour
          
         }
     }
-    
+    public void WinGame()
+    {
+            StartCoroutine(WinGameTransition());
+    }
     
     public void Endgame()
     {
@@ -96,29 +101,20 @@ public class GameManager : MonoBehaviour
     }
     IEnumerator LoadMainMenu()
     {
-        
         Time.timeScale = 1f;
         //stop music and play transition
         FindObjectOfType<SoundManagerScript>().StopMusic();
-        FindObjectOfType<LevelLoader>().Transition.SetTrigger("Add_Transition");
         yield return new WaitForSeconds(0.5f);
-        if (HasDied == true)
-        {
-            FindObjectOfType<LevelLoader>().Transition.SetTrigger("Start");
-        }
-        else
-        {
-            FindObjectOfType<LevelLoader>().Transition.SetTrigger("End");
-        }
+        FindObjectOfType<LevelLoader>().Transition.SetTrigger("Start");
         FindObjectOfType<SoundManagerScript>().PlayTransitionSFX();
-
+        yield return new WaitForSeconds(0.5f);
         //start main menu music and canvas
         FindObjectOfType<SoundManagerScript>().GameStarted = false;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.1f);
         AsyncOperation operation = SceneManager.LoadSceneAsync("MainMenu");
         StartCoroutine(FindObjectOfType<SoundManagerScript>().StartMainMenuMusic());
         FindObjectOfType<LevelLoader>().Transition.SetTrigger("End");
-        HasDied = false;
+       
         
 
     }
@@ -133,17 +129,39 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         GameOverCanvas.SetActive(true);
         FindObjectOfType<SoundManagerScript>().StopMusic();
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(1f);
         FindObjectOfType<LevelLoader>().Transition.ResetTrigger("Start");
         yield return new WaitForSeconds(1f);
-        FindObjectOfType<LevelLoader>().Transition.SetTrigger("End");
+        FindObjectOfType<LevelLoader>().Transition.SetTrigger("Appear_To_End");
         StartCoroutine(FindObjectOfType<SoundManagerScript>().StartGameOverMusic());
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(0.5f);
         FindObjectOfType<LevelLoader>().Transition.SetTrigger("End");
         GameOverSelect.SetActive(true);
+        yield return new WaitForSeconds(1f);
+        Time.timeScale = 0;
+        
+    }
+    IEnumerator WinGameTransition()
+    {
+        FindObjectOfType<LevelLoader>().Transition.ResetTrigger("Remove_Transition");
+        Time.timeScale = 1;
+        FindObjectOfType<LevelLoader>().Transition.SetTrigger("Add_Transition");
+        yield return new WaitForSeconds(0.5f);
+        FindObjectOfType<LevelLoader>().Transition.SetTrigger("Start");
+        yield return new WaitForSeconds(1f);
+        WinCanvas.SetActive(true);
+        FindObjectOfType<SoundManagerScript>().StopMusic();
+        yield return new WaitForSeconds(0.1f);
+        FindObjectOfType<LevelLoader>().Transition.ResetTrigger("Start");
+        FindObjectOfType<SoundManagerScript>().PlayTransitionSFX();
+        yield return new WaitForSeconds(1f);
+        FindObjectOfType<LevelLoader>().Transition.SetTrigger("Appear_To_End");
+        StartCoroutine(FindObjectOfType<SoundManagerScript>().StartWinMusic());
+        yield return new WaitForSeconds(0.7f);
+        FindObjectOfType<LevelLoader>().Transition.SetTrigger("End");
+        AfterWinCanvas.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         Time.timeScale = 0;
-        HasDied = true;
     }
     public void ChangeSpeed()
     {

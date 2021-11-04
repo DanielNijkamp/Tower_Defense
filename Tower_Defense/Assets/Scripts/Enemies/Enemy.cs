@@ -15,7 +15,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float arrivalThreshold;
     [SerializeField] private float RotationSpeed;
 
+    public float StartingHealth;
     public float health;
+
     public int DamageToPlayer;
     public int DamageMoney;
     
@@ -30,13 +32,15 @@ public class Enemy : MonoBehaviour
     public bool isBoss;
 
 
-
+    
     private void Start()
     {
+        
         IsAtEnd = false;
         HealthText = GameObject.Find("HealthTextObject").GetComponent<TextMeshProUGUI>();
         HealthText.text = FindObjectOfType<GameManager>().PlayerHealth + " ";
         SetupPath();
+        this.Healthbar.maxValue = this.health;
     }
     private void FixedUpdate()
     {
@@ -114,6 +118,8 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         speed = baseSpeed;
+        health = this.StartingHealth;
+        
     }
     
 }

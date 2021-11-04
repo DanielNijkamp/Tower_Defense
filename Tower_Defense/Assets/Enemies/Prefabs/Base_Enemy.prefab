@@ -511,7 +511,8 @@ MonoBehaviour:
   bossslowspeed: 0
   arrivalThreshold: 0.1
   RotationSpeed: 20
-  health: 100
+  StartingHealth: 100
+  health: 0
   DamageToPlayer: 50
   DamageMoney: 25
   currentWaypoint: {fileID: 0}

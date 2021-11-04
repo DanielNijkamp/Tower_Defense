@@ -160,7 +160,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 6
+  m_SortingOrder: 9
   m_Time: 0.2
   m_Parameters:
     serializedVersion: 3
@@ -170,7 +170,7 @@ TrailRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0.008195341
-        value: 0.18302782
+        value: 0.1383806
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -179,7 +179,7 @@ TrailRenderer:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 0.17409627
+        value: 0.10266988
         inSlope: -0.04456894
         outSlope: -0.04456894
         tangentMode: 0

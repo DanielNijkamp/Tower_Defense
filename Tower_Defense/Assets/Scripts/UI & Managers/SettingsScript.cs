@@ -30,8 +30,8 @@ public class SettingsScript : MonoBehaviour
     [HideInInspector] public bool SettingIsOpen = false;
 
 
-    Resolution[] resolutions;
-    public TMPro.TMP_Dropdown resolutionDropdown;
+    //Resolution[] resolutions;
+    //public TMPro.TMP_Dropdown resolutionDropdown;
 
     public Volume m_Volume;
 
@@ -42,8 +42,9 @@ public class SettingsScript : MonoBehaviour
     public ChromaticAberration m_CA = null;
 
     public TMPro.TMP_Dropdown QualityDropdown;
-
-
+    
+    //string[] width = new string[] { "1080", "900", "768", "720" };
+    //string[] height = new string[] { "1920", "1600", "1366", "1280" };
 
     public Toggle pp_toggle;
     public Toggle bloom_toggle;
@@ -72,12 +73,11 @@ public class SettingsScript : MonoBehaviour
         SFXChanged(SFXSliderPerfs);
         BGMChanged(BGMSliderPerfs);
 
-        VolumeProfile proflile = m_Volume.sharedProfile;
+        VolumeProfile profile = m_Volume.sharedProfile;
 
         volumeobject.SetActive(true);
 
-
-        resolutions = Screen.resolutions;
+        /*resolutions = Screen.resolutions;
 
         resolutionDropdown.ClearOptions();
 
@@ -100,6 +100,7 @@ public class SettingsScript : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
+        */
     }
     public void BGMChanged(float value)
     {
@@ -141,16 +142,14 @@ public class SettingsScript : MonoBehaviour
     
 
 
-    public void SetResolution(int resolutionIndex)
+    /*public void SetResolution(int resolutionIndex)
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
-    }
+    }*/
     public void SetQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
-    
-
     }
     public void SetFullScreen(bool isFullscreen)
     {
