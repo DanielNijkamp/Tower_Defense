@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 322071950975779188}
   - component: {fileID: 322071950975779189}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Health_Logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 322071951292645922}
   - component: {fileID: 322071951292645933}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Health_Empty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,10 +175,10 @@ GameObject:
   - component: {fileID: 322071952272984989}
   - component: {fileID: 848682303217648676}
   - component: {fileID: 1199803208623125945}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Health_Tower
   m_TagString: Health_Tower
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -231,7 +231,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 759565492379380408379da3f8559741, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthToAdd: 25
 --- !u!1 &2062041900452298869
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,7 +241,7 @@ GameObject:
   m_Component:
   - component: {fileID: 278360638799237646}
   - component: {fileID: 4736292480948452672}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Disk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -324,7 +323,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4534253435931843184}
   - component: {fileID: 4868963740254238546}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}

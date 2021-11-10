@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7077354136731470504}
   - component: {fileID: 260393172990627008}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ GameObject:
   - component: {fileID: 4930707941921157246}
   - component: {fileID: 5891819554961650587}
   - component: {fileID: 5370553822457648016}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: Long_Gray_Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,7 +240,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.06582391, y: 0}

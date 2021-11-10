@@ -16,15 +16,20 @@ public class Acid_Pool : MonoBehaviour
     private void Start()
     {
         Acid_Pool_Effect.SetActive(false);
+        if (this != null)
+        {
+            Destroy(gameObject, 5);
+        }
+        
 
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Acid_Pool_Effect.SetActive(true);
-        
+
     }
-    
+
     IEnumerator IncreaseAcidTick()
     {
         Iscooldown = true;
@@ -42,7 +47,7 @@ public class Acid_Pool : MonoBehaviour
                 Hit_Enemies.Add(enemy.gameObject);
             }
         }
-        
+
     }
     private void FixedUpdate()
     {
@@ -52,19 +57,17 @@ public class Acid_Pool : MonoBehaviour
             {
                 enemy.gameObject.GetComponent<Enemy>().TakeDamage(FindObjectOfType<AcidTowerScript>().damage);
             }
+            if (Iscooldown == false)
+            {
+                StartCoroutine(IncreaseAcidTick());
+            }
+            if (Acid_Tick >= FindObjectOfType<AcidTowerScript>().Max_Acid_Tick)
+            {
+                Destroy(this.gameObject);
+            }
+
 
         }
-        layer = ~layer;
-        if (Iscooldown == false)
-        {
-            StartCoroutine(IncreaseAcidTick());
-        }
-        if (Acid_Tick >= FindObjectOfType<AcidTowerScript>().Max_Acid_Tick)
-        {
-            Destroy(this.gameObject);
-        }
-        
-
     }
 }
 

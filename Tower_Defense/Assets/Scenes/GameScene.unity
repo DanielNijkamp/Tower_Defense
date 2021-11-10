@@ -1114,7 +1114,7 @@ MonoBehaviour:
   i: 1
   _layer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 128
 --- !u!4 &452503060
 Transform:
   m_ObjectHideFlags: 0
@@ -3096,7 +3096,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerHealth: 100
   PlayerWealth: 0
-  startingWealth: 300000
+  startingWealth: 700
   EnemyDeathReward: 100
   EnemyHitReward: 15
   WaveMoney: 100

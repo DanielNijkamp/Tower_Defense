@@ -420,7 +420,7 @@ GameObject:
   - component: {fileID: 513073001144886606}
   - component: {fileID: 8056442824182262084}
   - component: {fileID: 951547273274614394}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Base_Enemy_V4
   m_TagString: Enemy
   m_Icon: {fileID: 0}

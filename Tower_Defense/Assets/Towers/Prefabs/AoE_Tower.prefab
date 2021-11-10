@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4269818736150846765}
   - component: {fileID: 4875218624764182348}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ring
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1695398758607051528}
   - component: {fileID: 832931131834240968}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AoE_Triangle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4989540752854975076}
   - component: {fileID: 4989540752854975079}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AoE_base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,10 +259,10 @@ GameObject:
   - component: {fileID: 3143409602187871433}
   - component: {fileID: 1049866400700614792}
   - component: {fileID: 6570122395156734425}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: AoE_Tower
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_TagString: Tower
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -375,7 +375,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4989540753407549544}
   - component: {fileID: 4989540753407549547}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Point Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -447,7 +447,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4989540753687771101}
   - component: {fileID: 4989540753687771100}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AoE_base_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

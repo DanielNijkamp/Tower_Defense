@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4423597132460551739}
   - component: {fileID: 4423597132460551738}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Barrel1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4423597132872308377}
   - component: {fileID: 4423597132872308382}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Barrel3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4423597133262681376}
   - component: {fileID: 4423597133262681377}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: TowerLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,7 +246,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4423597133276971041}
   - component: {fileID: 4423597133276971046}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Barrel2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -331,10 +331,10 @@ GameObject:
   - component: {fileID: 4622385622835516816}
   - component: {fileID: 1091098485486692894}
   - component: {fileID: 473544555750420450}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Rapid_Tower
   m_TagString: Tower
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -444,7 +444,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4423597134078061290}
   - component: {fileID: 4423597134078061291}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rapid_Tower_Base_Vector
   m_TagString: Untagged
   m_Icon: {fileID: 0}

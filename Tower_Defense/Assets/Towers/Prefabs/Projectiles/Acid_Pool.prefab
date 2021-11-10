@@ -67,7 +67,7 @@ MonoBehaviour:
   Iscooldown: 0
   layer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 256
   Hit_Enemies: []
 --- !u!1 &2022496980532565455
 GameObject:
