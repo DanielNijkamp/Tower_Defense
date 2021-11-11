@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class High_Cal : MonoBehaviour
+public class High_Cal : Base_Tower
 {
-    public float damage;
     public float timeBetweenShots;
     private float NextTimeToShoot;
     private float Rotationspeed = 5;
@@ -17,7 +16,10 @@ public class High_Cal : MonoBehaviour
 
     [SerializeField] public List<GameObject> High_Cal_NearbyEnemies = new List<GameObject>();
 
-
+    private void Start()
+    {
+        timeBetweenShots = FireRate;
+    }
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Enemy")

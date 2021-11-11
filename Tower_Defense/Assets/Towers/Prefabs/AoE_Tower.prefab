@@ -259,6 +259,7 @@ GameObject:
   - component: {fileID: 3143409602187871433}
   - component: {fileID: 1049866400700614792}
   - component: {fileID: 6570122395156734425}
+  - component: {fileID: 5073875118627874847}
   m_Layer: 9
   m_Name: AoE_Tower
   m_TagString: Tower
@@ -319,6 +320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 35
+  FireRate: 3
   timeBetweenShots: 2
   nextTarget: {fileID: 0}
   AoE_Nearby: []
@@ -365,6 +367,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5073875118627874847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4989540753002856290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74e4e0acc02b6e94cbaf734c43176943, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  FireRate: 0
 --- !u!1 &4989540753407549545
 GameObject:
   m_ObjectHideFlags: 0

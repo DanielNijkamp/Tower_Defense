@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AcidTowerScript : MonoBehaviour
+public class AcidTowerScript : Base_Tower
 {
-    public float damage;
     public float timeBetweenShots;
     private float NextTimeToShoot;
 
@@ -16,8 +15,6 @@ public class AcidTowerScript : MonoBehaviour
     public int radius;
     public int Max_Acid_Tick;
 
-    GameObject currentEnemy;
-
     public GameObject Acid_Pool_Prefab;
     private GameObject Acid_Pool;
 
@@ -25,7 +22,7 @@ public class AcidTowerScript : MonoBehaviour
     public bool hasShot = false;
     private void Start()
     {
-        
+        timeBetweenShots = FireRate;
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {

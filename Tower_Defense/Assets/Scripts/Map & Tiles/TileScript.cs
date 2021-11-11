@@ -18,11 +18,12 @@ public class TileScript : MonoBehaviour
 
     public GameObject ShopCanvas;
     public GameObject SellCanvas;
+    public GameObject UpgradeCanvas;
 
     public TextMeshProUGUI selltext;
     public TextMeshProUGUI upgradetext;
 
-    private int Tower_Tier;
+    private int Tower_Tier = 0;
     //public Button RapidFireButton, AoE_Button, SlowButton, MoneyButton, HealthButton, HighCalButton;
 
     public int RapidFireCost = 100, AoE_Cost = 500, SlowCost = 300, MoneyCost = 800, HealthCost = 1000, HighCalCost = 1000, AcidCost = 1200;
@@ -137,30 +138,56 @@ public class TileScript : MonoBehaviour
         this.SellCanvas.SetActive(false);
         FindObjectOfType<GameManager>().PlayerWealth += CurrentTowerCost / 2;
         FindObjectOfType<ClickManager>().i++;
+        this.Tower_Tier = 0;
+        
     }
     public void Upgrade_Tower()
     {
-        //UpgradeAmount = CurrentTowerCost * 1.5f;
-        //FindObjectOfType<GameManager>().PlayerWealth -= Mathf.RoundToInt(UpgradeAmount);
-        Tower_Tier++;
-        switch (Tower_Tier)
+        if (FindObjectOfType<GameManager>().PlayerWealth > 0 && FindObjectOfType<GameManager>().PlayerWealth - UpgradeAmount >= 0)
         {
-            case 1:
-                print("upgrade tier should be 1, is :" + Tower_Tier);
-                break;
-            case 2:
-                print("upgrade tier should be 2, is :" + Tower_Tier);
-                break;
-            case 3:
-                print("upgrade tier should be 3, is :" + Tower_Tier);
-                break;
-            case 4:
-                print("upgrade tier should be 4, is :" + Tower_Tier);
-                break;
-            case 5:
-                print("upgrade tier should be 5, is :" + Tower_Tier);
-                break;
+            FindObjectOfType<GameManager>().PlayerWealth -= Mathf.RoundToInt(UpgradeAmount);
+            Tower_Tier++;
+
+            switch (Tower_Tier)
+            {
+                case 1:
+                    print("upgrade tier should be 1, is :" + Tower_Tier);
+                    ProcessUpgrade(1.1f/* damage*/, 1.5f /*amount*/);
+                    break;
+                case 2:
+                    print("upgrade tier should be 2, is :" + Tower_Tier);
+                    ProcessUpgrade(1.2f/* damage*/, 2f /*amount*/);
+                    break;
+                case 3:
+                    print("upgrade tier should be 3, is :" + Tower_Tier);
+                    ProcessUpgrade(1.3f/* damage*/, 2.5f /*amount*/);
+                    break;
+                case 4:
+                    print("upgrade tier should be 4, is :" + Tower_Tier);
+                    ProcessUpgrade(1.4f/* damage*/, 3f /*amount*/);
+                    break;
+                case 5:
+                    print("upgrade tier should be 5, is :" + Tower_Tier);
+                    ProcessUpgrade(2f/* damage*/, 0f /*amount*/);
+
+                    break;
+            }
+            
         }
+
+    }
+    public void CheckUpgrade()
+    {
+        if (this.CurrentTower.GetComponent<Base_Tower>() == null)
+        {
+            this.UpgradeCanvas.SetActive(false);
+        }
+    }
+    public void ProcessUpgrade(float damage, float amount)
+    {
+        CurrentTower.GetComponent<Base_Tower>().damage *= damage;
+        CurrentTowerSellAmount = Mathf.RoundToInt(UpgradeAmount / 2);
+        this.UpgradeAmount *= amount;
     }
     private void FixedUpdate()
     {
@@ -169,7 +196,9 @@ public class TileScript : MonoBehaviour
         {
             this.ShopCanvas.SetActive(false);
             FindObjectOfType<ClickManager>().i++;
-            
+            UpgradeAmount = CurrentTowerCost * 1.2f;
+            CurrentTowerSellAmount = CurrentTowerCost / 2;
+            CheckUpgrade();
             checkedTower = true;
 
         }
@@ -177,7 +206,15 @@ public class TileScript : MonoBehaviour
     private void Update()
     {
         selltext.text = this.CurrentTowerSellAmount + "";
-        upgradetext.text = this.UpgradeAmount + "";
+        if (Tower_Tier < 5)
+        {
+            upgradetext.text = Mathf.Round(this.UpgradeAmount) + "";
+        }
+        else
+        {
+            upgradetext.text = "MAXED";
+        }
+        
     }
 
 

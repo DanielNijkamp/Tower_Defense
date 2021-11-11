@@ -13,7 +13,6 @@ public class LightningBolt : MonoBehaviour
     public int i;
     private void Start()
     {
-        LightDamage = FindObjectOfType<AoETowerScript>().damage;
         i = 0;
         Destroy(this.gameObject, FindObjectOfType<AoETowerScript>().timeBetweenShots);
     }

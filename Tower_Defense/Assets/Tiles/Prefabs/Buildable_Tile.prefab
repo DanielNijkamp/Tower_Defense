@@ -1975,6 +1975,7 @@ MonoBehaviour:
   HasTower: 0
   ShopCanvas: {fileID: 2847408918465416524}
   SellCanvas: {fileID: 4058197580375743357}
+  UpgradeCanvas: {fileID: 6757435445596585751}
   selltext: {fileID: 6929047828484906458}
   upgradetext: {fileID: 2332181367605212868}
   RapidFireCost: 100

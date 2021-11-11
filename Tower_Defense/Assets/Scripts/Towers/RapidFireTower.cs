@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RapidFireTower : MonoBehaviour
+public class RapidFireTower : Base_Tower
 {
-    public float damage;
-    public float timeBetweenShots;
+    
+    private float timeBetweenShots ;
     private float NextTimeToShoot;
     private float Rotationspeed = 5;
     public Animator BarrelAnimation;
@@ -13,13 +13,15 @@ public class RapidFireTower : MonoBehaviour
     public GameObject[] GunBarrels;
     public GameObject bullet;
 
-    private GameObject colliderobject;
 
     private GameObject currentTarget;
 
     [SerializeField] private List<GameObject> RapidNearbyEnemies = new List<GameObject>();
 
-
+    private void Start()
+    {
+        timeBetweenShots = FireRate;
+    }   
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Enemy")

@@ -43,6 +43,7 @@ public class MapGen : MonoBehaviour
         {
             for (int x = 0; x < TileMap.GetLength(0); x++)
             {
+                
                 if (TileMap[x,y] == 0)
                 {
                     

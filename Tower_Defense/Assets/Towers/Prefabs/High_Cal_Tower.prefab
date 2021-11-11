@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7140439369570706010}
   - component: {fileID: -4669320725667494844}
   - component: {fileID: 1952642458177492343}
+  - component: {fileID: -2344456795529985300}
   m_Layer: 9
   m_Name: High_Cal_Tower
   m_TagString: Tower
@@ -51,7 +52,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 500
-  timeBetweenShots: 5
+  FireRate: 4
+  timeBetweenShots: 4
   BarrelAnimation: {fileID: 1952642458177492343}
   gunBarrel: {fileID: 5171960350311507844}
   bullet: {fileID: 4930707941921157241, guid: 1c9305aa6221c654eaebacc5802eb1fb, type: 3}
@@ -112,6 +114,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-2344456795529985300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5171960348969920092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74e4e0acc02b6e94cbaf734c43176943, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  FireRate: 0
 --- !u!1 &5171960349354116058
 GameObject:
   m_ObjectHideFlags: 0

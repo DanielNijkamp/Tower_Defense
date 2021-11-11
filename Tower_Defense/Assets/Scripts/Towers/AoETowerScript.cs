@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AoETowerScript : MonoBehaviour
+public class AoETowerScript : Base_Tower
 {
-    public float damage;
     public float timeBetweenShots;
     private float NextTimeToShoot;
 
@@ -18,7 +17,6 @@ public class AoETowerScript : MonoBehaviour
     public int chaincount;
     public int maxchaincount;
 
-    GameObject currentEnemy;
 
     public GameObject lightningcheckprefab;
     public GameObject lightningboltprefab;
@@ -29,7 +27,7 @@ public class AoETowerScript : MonoBehaviour
     public bool hasShot = false;
     private void Start()
     {
-        
+        timeBetweenShots = FireRate;
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -100,6 +98,7 @@ public class AoETowerScript : MonoBehaviour
         lightningChecker = Instantiate(lightningcheckprefab);
         lightningChecker.transform.position = currentTarget.transform.position;
         lightningBolt = Instantiate(lightningboltprefab);
+        lightningBolt.GetComponent<LightningBolt>().LightDamage = this.damage;
         lightningBolt.transform.position = this.transform.position;
         hasShot = true;
         yield return new WaitForSeconds(2f);
