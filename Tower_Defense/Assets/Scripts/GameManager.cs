@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public int EnemyHitReward = 15;
     public int WaveMoney = 100;
 
-
+    private bool HasDied;
     public bool IsPaused;
 
     public TextMeshProUGUI WealthText;
@@ -105,7 +105,17 @@ public class GameManager : MonoBehaviour
         //stop music and play transition
         FindObjectOfType<SoundManagerScript>().StopMusic();
         yield return new WaitForSeconds(0.5f);
-        FindObjectOfType<LevelLoader>().Transition.SetTrigger("End");
+        if (HasDied == true)
+        {
+
+            FindObjectOfType<LevelLoader>().Transition.SetTrigger("Start");
+        }
+        else
+        {
+            FindObjectOfType<LevelLoader>().Transition.SetTrigger("Add_Transition");
+            FindObjectOfType<LevelLoader>().Transition.SetTrigger("Appear_To_End");
+            
+        }
         FindObjectOfType<SoundManagerScript>().PlayTransitionSFX();
         yield return new WaitForSeconds(0.5f);
         //start main menu music and canvas
@@ -113,7 +123,17 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         AsyncOperation operation = SceneManager.LoadSceneAsync("MainMenu");
         StartCoroutine(FindObjectOfType<SoundManagerScript>().StartMainMenuMusic());
-        FindObjectOfType<LevelLoader>().Transition.SetTrigger("Start");
+        if (HasDied)
+        {
+            FindObjectOfType<LevelLoader>().Transition.SetTrigger("End");
+        }
+        else
+        {
+            FindObjectOfType<LevelLoader>().Transition.ResetTrigger("Start");
+            FindObjectOfType<LevelLoader>().Transition.SetTrigger("End");
+        }
+       
+        HasDied = false;
 
 
     }
@@ -138,6 +158,7 @@ public class GameManager : MonoBehaviour
         GameOverSelect.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         Time.timeScale = 0;
+        HasDied = true;
     }
     IEnumerator WinGameTransition()
     {
@@ -160,6 +181,7 @@ public class GameManager : MonoBehaviour
         AfterWinCanvas.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         Time.timeScale = 0;
+        HasDied = true;
     }
     public void ChangeSpeed()
     {

@@ -35,7 +35,7 @@ public class LevelLoader : MonoBehaviour
         AsyncOperation operation = SceneManager.LoadSceneAsync(levelIndex);
         StartCoroutine(FindObjectOfType<SoundManagerScript>().StartBGMMusic());
         Transition.SetTrigger("End");
-        yield return new WaitForSecondsRealtime(0.5f);
+        yield return new WaitForSecondsRealtime(1f);
         Transition.SetTrigger("Remove_Transition");
         yield return new WaitForSecondsRealtime(0.1f);
         Transition.SetTrigger("Remove_Transition");
